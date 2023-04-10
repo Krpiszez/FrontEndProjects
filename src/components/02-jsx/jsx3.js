@@ -2,7 +2,7 @@ import React from 'react'
 
 const Jsx3 = () => {
     const isAdmin = false;
-    const loading = false;
+    // const loading = false;
 
 
   return (

@@ -3,6 +3,7 @@ import { Bananas } from "./components/01-my-house/my-house";
 import Jsx1 from "./components/02-jsx/jsx1";
 import Jsx2 from "./components/02-jsx/jsx2";
 import Jsx3 from "./components/02-jsx/jsx3";
+import Jsx4 from "./components/02-jsx/jsx4";
 
 const App = () => {
     return (
@@ -15,6 +16,8 @@ const App = () => {
             <Jsx2 />
             <br/>
             <Jsx3 />
+            <br/>
+            <Jsx4 />
         </div>
     )
 };
