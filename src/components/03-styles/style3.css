@@ -1,13 +1,13 @@
-.style-container h2 {
+.style3-container h2 {
     color: red;
     text-align: center;
 }
 
-.style-container ul {
+.style3-container ul {
     list-style-type: none;
     padding: 0;
 }
 
-.style-container heading {
+.style3-container heading {
     font-style: italic;
 }

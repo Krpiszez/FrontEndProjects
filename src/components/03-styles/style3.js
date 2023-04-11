@@ -3,7 +3,7 @@ import "./style3.css";
 
 const Style3 = () => {
     return (
-        <section className='style-container'>
+        <section className='style3-container'>
             <h2 id='heading'>React State Management</h2>
             <ul>
                 <li>Creating State</li>

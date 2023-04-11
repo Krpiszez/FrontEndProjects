@@ -1,0 +1,35 @@
+$clr-title: green;
+
+.style4-container {
+    h2 {
+        color: blue;
+    }
+
+    #heading {
+        font-style: italic;
+    }
+
+    .list {
+        text-align: center;
+        list-style-type: none;
+    
+
+        li {
+            color: $clr-title;
+            font-style: italic;
+        }
+    }
+
+    .article1{
+        color: red;
+    }
+
+    .article2{
+        color: blue;
+    }
+
+    .article3{
+        color: aqua;
+    }
+
+}

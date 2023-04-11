@@ -8,6 +8,7 @@ import Jsx5 from "./components/02-jsx/jsx5";
 import Style1 from "./components/03-styles/style1";
 import Style2 from "./components/03-styles/style2";
 import Style3 from "./components/03-styles/style3";
+import Style4 from "./components/03-styles/style4";
 
 const App = () => {
     return (
@@ -33,6 +34,8 @@ const App = () => {
             <Style2 />
             <br/>
             <Style3 />
+            <br/>
+            <Style4 />
             <br/>
         </div>
     )
