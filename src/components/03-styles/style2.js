@@ -16,10 +16,10 @@ const Style2 = () => {
         margin: "0",
     };
 
-    console.log({
-        ...styles2,
-        padding: "1rem"
-    })
+    // console.log({
+    //     ...styles2,
+    //     padding: "1rem"
+    // })
 
     return (
         <section style={styles}>
