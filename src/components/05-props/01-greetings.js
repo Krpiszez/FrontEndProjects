@@ -2,6 +2,7 @@ import React from 'react'
 import Welcome1 from './01-welcome';
 import Welcome2 from './02-welcome';
 import Welcome3 from './03-welcome';
+import Products from './04-products';
 
 const Greetings = () => {
   return (
@@ -21,6 +22,15 @@ const Greetings = () => {
             firstName="Jonathan"
             lastName="Doe"
         />
+        <Products name="Sara"/>
+        <Products name="Jason">
+        HELLO WORLD
+        <br/>
+        <Welcome3
+            firstName="Jonathan"
+            lastName="Doe"
+        />
+        </Products>
     </div>
   )
 };
