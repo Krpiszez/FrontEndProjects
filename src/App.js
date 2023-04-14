@@ -11,6 +11,7 @@ import Style3 from "./components/03-styles/style3";
 import Style4 from "./components/03-styles/style4";
 import DigitalClockApplication1 from "./components/04-digital-clock-application/digital-clock-app1";
 import Greetings from "./components/05-props/01-greetings";
+import Impl1 from "./components/implementation/impl1";
 
 const App = () => {
     return (
@@ -42,6 +43,8 @@ const App = () => {
             <DigitalClockApplication1 />
             <br/>
             <Greetings />
+            <br/>
+            <Impl1 />
             <br/>
         </div>
     )
