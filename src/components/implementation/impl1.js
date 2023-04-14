@@ -6,7 +6,7 @@ const Impl1 = () => {
   return (
     <div>
         <div className="table">
-            <select name="" id="">
+            <select className='books'>
                 <option value="">All Books</option>
                 <option value="">Adventure</option>
                 <option value="">Novel</option>

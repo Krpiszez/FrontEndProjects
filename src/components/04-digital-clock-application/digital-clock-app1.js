@@ -4,10 +4,10 @@ import moment from 'moment/moment';
 
 const DigitalClockApplication1 = () => {
     const dateTime = moment();
+        
     console.log(dateTime);
-
     const dateStr = dateTime.format("LL");
-    const timeStr = dateTime.format("HH:mm");
+    const timeStr = dateTime.format("HH:mm:ss");  
     const dayStr = dateTime.format("dddd");
     const hour = dateTime.format("HH");
     console.log(hour);
