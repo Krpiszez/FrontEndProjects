@@ -52,6 +52,11 @@ const App = () => {
                 bgColor="red"
             />
             <br/>
+            <DigitalClockApplication2
+                textColor="white"
+                bgColor="blue"
+            />
+            <br/>
         </div>
     )
 };
