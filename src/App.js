@@ -12,6 +12,7 @@ import Style4 from "./components/03-styles/style4";
 import DigitalClockApplication1 from "./components/04-digital-clock-application/digital-clock-app1";
 import Greetings from "./components/05-props/01-greetings";
 import DigitalClockApplication2 from "./components/06-digital-clock-application2/06-digital-clock-application2";
+import Images1 from "./components/07-images/01-images";
 import Impl1 from "./components/implementation/impl1";
 
 const App = () => {
@@ -56,6 +57,8 @@ const App = () => {
                 textColor="white"
                 bgColor="blue"
             />
+            <br/>
+            <Images1/>
             <br/>
         </div>
     )
