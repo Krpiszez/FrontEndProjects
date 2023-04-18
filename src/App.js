@@ -14,6 +14,10 @@ import Greetings from "./components/05-props/01-greetings";
 import DigitalClockApplication2 from "./components/06-digital-clock-application2/06-digital-clock-application2";
 import Images1 from "./components/07-images/01-images";
 import ImageGallery from "./components/07-images/02-image-gallery";
+import ProfileCard from "./components/08-profile-card/profile-card";
+import BootstrapClassical from "./components/09-bootstrap/Bootstrapclassical";
+import BootstrapDynamical from "./components/09-bootstrap/bootstrap-dynamical";
+import ReactIcons from "./components/10-icons/react-icons";
 import Impl1 from "./components/implementation/impl1";
 
 const App = () => {
@@ -62,6 +66,21 @@ const App = () => {
             <Images1/>
             <br/>
             <ImageGallery/>
+            <br/>
+            <ProfileCard
+                name = "Walker"
+                image = "profile-card.jpg"
+                location = "Nashville, Tennesse"
+                shot = "2"
+                followers = "234"
+                following = "327"            
+            />
+            <br/>
+            <BootstrapClassical/>
+            <br/>
+            <BootstrapDynamical/>
+            <br/>
+            <ReactIcons/>
             <br/>
         </div>
     )

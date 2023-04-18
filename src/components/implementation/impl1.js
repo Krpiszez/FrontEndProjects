@@ -2,7 +2,6 @@ import React from 'react'
 import './impl1.scss'
 
 const Impl1 = () => {
-    const table = 1;
   return (
     <div>
         <div className="table">
