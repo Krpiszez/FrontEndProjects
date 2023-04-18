@@ -14,7 +14,7 @@ const BootstrapDynamical = () => {
                 <Col>Cell</Col>
                 <Col>Cell</Col>
             </Row>
-            <Button variant='warning'>Click Me</Button>
+            <Button variant='danger'>Click Me</Button>
             <Button variant='info' className='ms-2'>Click Me</Button>
             <Alert variant='danger' show={error} className='my-3'>
                 Hey! Pay attention!

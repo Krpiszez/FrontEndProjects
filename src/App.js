@@ -17,6 +17,7 @@ import ImageGallery from "./components/07-images/02-image-gallery";
 import ProfileCard from "./components/08-profile-card/profile-card";
 import BootstrapClassical from "./components/09-bootstrap/Bootstrapclassical";
 import BootstrapDynamical from "./components/09-bootstrap/bootstrap-dynamical";
+import MaterialIcons from "./components/10-icons/material-icons";
 import ReactIcons from "./components/10-icons/react-icons";
 import Impl1 from "./components/implementation/impl1";
 
@@ -81,6 +82,8 @@ const App = () => {
             <BootstrapDynamical/>
             <br/>
             <ReactIcons/>
+            <br/>
+            <MaterialIcons/>
             <br/>
         </div>
     )
