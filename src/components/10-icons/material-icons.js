@@ -8,13 +8,13 @@ import { ThemeProvider } from '@mui/material';
 
 const MaterialIcons = () => {
   return (
-    <div>MaterialIcons:
+    <Container>MaterialIcons:
         <ThemeProvider theme={theme}>
         <FacebookIcon fontSize='large' color='primary'/>
         <TwitterIcon fontSize='small' color='warning'/>
         <InstagramIcon fontSize='large' color='customColor'/>
         </ThemeProvider>
-    </div>
+    </Container>
 
   )
 }

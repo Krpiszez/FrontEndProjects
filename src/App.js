@@ -19,6 +19,7 @@ import BootstrapClassical from "./components/09-bootstrap/Bootstrapclassical";
 import BootstrapDynamical from "./components/09-bootstrap/bootstrap-dynamical";
 import MaterialIcons from "./components/10-icons/material-icons";
 import ReactIcons from "./components/10-icons/react-icons";
+import Event from "./components/11-events/events";
 import Impl1 from "./components/implementation/impl1";
 
 const App = () => {
@@ -84,6 +85,8 @@ const App = () => {
             <ReactIcons/>
             <br/>
             <MaterialIcons/>
+            <br/>
+            <Event/>
             <br/>
         </div>
     )
