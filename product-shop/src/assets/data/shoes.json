@@ -1,0 +1,58 @@
+[
+    {
+        "id": "1",
+        "image": "shoe1.jpg",
+        "title": "Shoe1",
+        "desc": "House1 Adress...",
+        "price": 100
+    },
+    {
+        "id": "2",
+        "image": "shoe2.jpg",
+        "title": "Shoe2",
+        "desc": "House2 Adress...",
+        "price": 1250
+    },
+    {
+        "id": "3",
+        "image": "shoe3.jpg",
+        "title": "Shoe3",
+        "desc": "House3 Adress...",
+        "price": 1500
+    },
+    {
+        "id": "4",
+        "image": "shoe4.jpg",
+        "title": "Shoe4",
+        "desc": "House4 Adress...",
+        "price": 700
+    },
+    {
+        "id": "5",
+        "image": "shoe5.jpg",
+        "title": "Shoe5",
+        "desc": "House5 Adress...",
+        "price": 1000
+    },
+    {
+        "id": "6",
+        "image": "shoe6.jpg",
+        "title": "Shoe6",
+        "desc": "House6 Adress...",
+        "price": 1600
+    },
+    {
+        "id": "7",
+        "image": "shoe7.jpg",
+        "title": "Shoe7",
+        "desc": "House7 Adress...",
+        "price": 1200
+    },
+    {
+        "id": "8",
+        "image": "shoe8.jpg",
+        "title": "Shoe8",
+        "desc": "House8 Adress...",
+        "price": 1300
+    }
+]
