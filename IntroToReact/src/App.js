@@ -23,6 +23,7 @@ import Event from "./components/11-events/events";
 import State1 from "./components/12-state/01-state";
 import State2 from "./components/12-state/02-state";
 import Birthday from "./components/13-birthday/birthday";
+import ProgressBar from "./components/implementation/ProgressBar";
 import Impl1 from "./components/implementation/impl1";
 
 const App = () => {
@@ -96,6 +97,8 @@ const App = () => {
             <State2/>
             <br/>
             <Birthday/>
+            <br/>
+            <ProgressBar/>
             <br/>
         </div>
     )
