@@ -21,6 +21,8 @@ import MaterialIcons from "./components/10-icons/material-icons";
 import ReactIcons from "./components/10-icons/react-icons";
 import Event from "./components/11-events/events";
 import State1 from "./components/12-state/01-state";
+import State2 from "./components/12-state/02-state";
+import Birthday from "./components/13-birthday/birthday";
 import Impl1 from "./components/implementation/impl1";
 
 const App = () => {
@@ -90,6 +92,10 @@ const App = () => {
             <Event/>
             <br/>
             <State1/>
+            <br/>
+            <State2/>
+            <br/>
+            <Birthday/>
             <br/>
         </div>
     )
