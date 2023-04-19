@@ -1,0 +1,58 @@
+[
+    {
+        "id": "1",
+        "image": "house1.jpeg",
+        "title": "House1",
+        "desc": "House1 Adress...",
+        "price": 1000000
+    },
+    {
+        "id": "2",
+        "image": "house2.jpg",
+        "title": "House2",
+        "desc": "House2 Adress...",
+        "price": 1250000
+    },
+    {
+        "id": "3",
+        "image": "house3.jpg",
+        "title": "House3",
+        "desc": "House3 Adress...",
+        "price": 1500000
+    },
+    {
+        "id": "4",
+        "image": "house4.jpg",
+        "title": "House4",
+        "desc": "House4 Adress...",
+        "price": 700000
+    },
+    {
+        "id": "5",
+        "image": "house5.jpg",
+        "title": "House5",
+        "desc": "House5 Adress...",
+        "price": 1000000
+    },
+    {
+        "id": "6",
+        "image": "house6.jpg",
+        "title": "House6",
+        "desc": "House6 Adress...",
+        "price": 1600000
+    },
+    {
+        "id": "7",
+        "image": "house7.jpg",
+        "title": "House7",
+        "desc": "House7 Adress...",
+        "price": 1200000
+    },
+    {
+        "id": "8",
+        "image": "house8.jpg",
+        "title": "House8",
+        "desc": "House8 Adress...",
+        "price": 1350000
+    }
+]
