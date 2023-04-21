@@ -3,6 +3,8 @@ import {Delete} from "@mui/icons-material"
 import { Card, Row, Col } from 'react-bootstrap'
 
 const Person = ({age, image, name}) => {
+
+  
   return (
     <Card>
       <Row>
