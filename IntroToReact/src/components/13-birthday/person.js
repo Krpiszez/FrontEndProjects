@@ -2,7 +2,7 @@ import React from 'react'
 import {Delete} from "@mui/icons-material"
 import { Card, Row, Col } from 'react-bootstrap'
 
-const Person = ({age, image, name}) => {
+const Person = ({id, age, image, name, deletePerson}) => {
 
   
   return (
