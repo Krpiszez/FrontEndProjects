@@ -17,7 +17,7 @@ const Person = ({age, image, name}) => {
             <Card.Text>
               Age: {age}
             </Card.Text>
-            <Delete style={{cursor:'pointer'}}/>
+            <Delete style={{cursor:'pointer'}} onClick={()=>deletePerson(id)}/>
           </Card.Body>
         </Col>
       </Row>
