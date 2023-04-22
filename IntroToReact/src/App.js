@@ -24,6 +24,7 @@ import State1 from "./components/12-state/01-state";
 import State2 from "./components/12-state/02-state";
 import Birthday from "./components/13-birthday/birthday";
 import UseEffect01 from "./components/14-useeffect/01-use-effect";
+import { Counter2 } from "./components/14-useeffect/02-use-effect";
 import ProgressBar from "./components/implementation/ProgressBar";
 import Impl1 from "./components/implementation/impl1";
 
@@ -102,6 +103,8 @@ const App = () => {
             <ProgressBar/>
             <br/>
             <UseEffect01/>
+            <br/>
+            <Counter2/>
             <br/>
         </div>
     )
