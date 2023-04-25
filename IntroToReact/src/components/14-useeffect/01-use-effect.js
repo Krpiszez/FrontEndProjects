@@ -31,12 +31,19 @@ const UseEffect01 = (id) => {
         }
     }, []);
 
+    useEffect(()=>{
+        console.log("Hello!");
+        return(
+            console.log("Bye!")
+        )
+    },[])
+
     useEffect(() => {
         console.log(`UPDATING-1: The codes in this section are executed in render and re-render situations and after the return part at the bottom is rendered. This useEffect is specifically used to access underlying elements with useRef`);
     });
 
     useEffect(() => {
-        console.log(`UPDATING-2: The codes in this section work at the first render and after teh first render if teh dependency (message, id) written at the bottom changes`);
+        console.log(`UPDATING-2: The codes in this section work at the first render and after the first render if the dependency (message, id) written at the bottom changes`);
     }, [message, id]);
 
   return (

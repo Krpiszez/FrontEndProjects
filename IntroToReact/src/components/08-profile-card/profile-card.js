@@ -11,9 +11,9 @@ const ProfileCard = ({name, image, location, shot, followers, following}) => {
     <>
         <h2 style={{textAlign : 'center'}}>Profile Card</h2>
         <div className='profile-card-container'>
+            
             <div className="header" 
-                style={profileBg}>
-                
+                style={profileBg}>               
             </div>
             <div className='content'>
                 <div className="avatar" style={profileBg}></div>

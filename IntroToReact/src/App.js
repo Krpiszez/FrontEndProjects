@@ -29,6 +29,7 @@ import ProgressBar from "./components/implementation/ProgressBar";
 import Impl1 from "./components/implementation/impl1";
 
 const App = () => {
+    const conditionalRender = true;
     return (
         <div className="app">
             <MyHouse />
@@ -102,7 +103,10 @@ const App = () => {
             <br/>
             <ProgressBar/>
             <br/>
-            <UseEffect01/>
+            {
+                conditionalRender &&  <UseEffect01 name="Omar"/>
+            }
+            {/* <UseEffect01/> */}
             <br/>
             <Counter2/>
             <br/>
