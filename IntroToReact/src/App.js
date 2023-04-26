@@ -27,6 +27,7 @@ import UseEffect01 from "./components/14-useeffect/01-use-effect";
 import { Counter2 } from "./components/14-useeffect/02-use-effect";
 import DigitalClockApplication3 from "./components/15-digital-clock-application3/15-digital-clock-application3";
 import FilterList from "./components/16-filter-list/filter-list";
+import NextInput from "./components/17-useref/02-next-input";
 import UseRefHook from "./components/17-useref/useref";
 import ProgressBar from "./components/implementation/ProgressBar";
 import Impl1 from "./components/implementation/impl1";
@@ -121,6 +122,8 @@ const App = () => {
             <FilterList/>
             <br/>
             <UseRefHook/>
+            <br/>
+            <NextInput/>
             <br/>
         </div>
     )

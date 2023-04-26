@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import { Button, Container, Form } from 'react-bootstrap'
 
 const UseRefHook = () => {
