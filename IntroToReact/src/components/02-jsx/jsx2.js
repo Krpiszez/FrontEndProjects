@@ -7,7 +7,6 @@ const Jsx2 = () => {
         occupation: "Godfather of the Developers"
     }
 
-    console.log(user.name)
 
     return (
         <>

@@ -29,11 +29,14 @@ import DigitalClockApplication3 from "./components/15-digital-clock-application3
 import FilterList from "./components/16-filter-list/filter-list";
 import NextInput from "./components/17-useref/02-next-input";
 import UseRefHook from "./components/17-useref/useref";
+import ClassTypeComponent from "./components/18-class-type-component/class-type-components";
+import FunctionTypeComponent from "./components/18-class-type-component/function-type-component";
 import ProgressBar from "./components/implementation/ProgressBar";
 import Impl1 from "./components/implementation/impl1";
 
 const App = () => {
     const conditionalRender = true;
+    const conditionalRender2 = true;
     return (
         <div className="app">
             <MyHouse />
@@ -124,6 +127,15 @@ const App = () => {
             <UseRefHook/>
             <br/>
             <NextInput/>
+            <br/>
+            {
+                conditionalRender2 && <ClassTypeComponent car={"BMW"}/>
+            }
+            <br/>
+            {
+                conditionalRender2 && <FunctionTypeComponent car={"BMW"}/>
+            }
+            
             <br/>
         </div>
     )

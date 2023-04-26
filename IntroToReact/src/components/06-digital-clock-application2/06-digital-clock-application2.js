@@ -5,12 +5,12 @@ import moment from 'moment';
 const DigitalClockApplication2 = (props) => {
     const dateTime = moment();
         
-    console.log(dateTime);
+    // console.log(dateTime);
     const dateStr = dateTime.format("LL");
     const timeStr = dateTime.format("HH:mm:ss");  
     const dayStr = dateTime.format("dddd");
     const hour = dateTime.format("HH");
-    console.log(hour);
+    // console.log(hour);
     let message;
 
     if(hour >= 6 && hour < 11){
