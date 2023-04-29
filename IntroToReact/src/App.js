@@ -31,8 +31,9 @@ import NextInput from "./components/17-useref/02-next-input";
 import UseRefHook from "./components/17-useref/useref";
 import ClassTypeComponent from "./components/18-class-type-component/class-type-components";
 import FunctionTypeComponent from "./components/18-class-type-component/function-type-component";
-import UserCard from "./components/19-fetch/user-card";
 import UserCards from "./components/19-fetch/user-cards";
+import Countries from "./components/20-axios/countries";
+import ParentComponent from "./components/21-lifting-state/parent-component";
 import ProgressBar from "./components/implementation/ProgressBar";
 import Impl1 from "./components/implementation/impl1";
 
@@ -139,9 +140,11 @@ const App = () => {
             }
             
             <br/>
-            <br/>
             <UserCards/>
             <br/>
+            <Countries/>
+            <br/>
+            <ParentComponent/>
         </div>
     )
 };
