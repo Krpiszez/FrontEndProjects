@@ -34,6 +34,9 @@ import FunctionTypeComponent from "./components/18-class-type-component/function
 import UserCards from "./components/19-fetch/user-cards";
 import Countries from "./components/20-axios/countries";
 import ParentComponent from "./components/21-lifting-state/parent-component";
+import Form1 from "./components/22-forms/Form1";
+import Form2 from "./components/22-forms/Form2";
+import Form3 from "./components/22-forms/Form3";
 import ProgressBar from "./components/implementation/ProgressBar";
 import Impl1 from "./components/implementation/impl1";
 
@@ -145,6 +148,13 @@ const App = () => {
             <Countries/>
             <br/>
             <ParentComponent/>
+            <br/>
+            <Form1/>
+            <br/>
+            <Form2/>
+            <br/>
+            <Form3/>
+            <br/>
         </div>
     )
 };
