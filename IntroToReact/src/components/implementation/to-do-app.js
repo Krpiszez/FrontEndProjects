@@ -48,7 +48,7 @@ const ToDo = () => {
                 addDataToMockApi(newData);
 
             }}
-            >Button</Button>
+            >Add To Do List</Button>
         </InputGroup>
         <Row className='mx-0'>            
                 {toDoList.map((t)=>{
