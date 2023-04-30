@@ -36,7 +36,8 @@ import Countries from "./components/20-axios/countries";
 import ParentComponent from "./components/21-lifting-state/parent-component";
 import Form1 from "./components/22-forms/Form1";
 import Form2 from "./components/22-forms/Form2";
-import Form3 from "./components/22-forms/Form3";
+import FormPractice1 from "./components/22-forms/FormPractice1";
+import FormPractice2 from "./components/22-forms/FormPractice2";
 import ProgressBar from "./components/implementation/ProgressBar";
 import Impl1 from "./components/implementation/impl1";
 import ToDo from "./components/implementation/to-do-app";
@@ -154,9 +155,11 @@ const App = () => {
             <br/>
             <Form2/>
             <br/>
-            <Form3/>
-            <br/>
             <ToDo/>
+            <br/>
+            <FormPractice1/>
+            <br/>
+            <FormPractice2/>
             <br/>
         </div>
     )
