@@ -1,37 +1,54 @@
 import React, { useState } from 'react'
-import { Button, Container, Form } from 'react-bootstrap'
+import { Button, Container, Form } from 'react-bootstrap';
 
-const FormPractice2 = () => {
+const FormValidation = () => {
     const [formData, setFormData] = useState({
         firstName : "",
         lastName : "",
         email : "",
         phone : ""
     });
-
     const handleFormData = (e) => {
         setFormData({...formData, [e.target.name]: e.target.value})
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert(`First Name: ${formData.firstName} \nLast Name: ${formData.lastName} \nEmail: ${formData.email} \nPhone: ${formData.phone}`)
+        try {
+            if (!formData.firstName) {
+                alert("Please enter your first name!");
+                return;
+            }
+            if (!formData.lastName) {
+                alert("Please enter your last name!");
+                return;
+            }
+            if (!formData.email) {
+                alert("Please enter your email!");
+                return;
+            }
+            if (!formData.phone) {
+                alert("Please enter your phone number!");
+                return;
+            }
+            console.log("Form submitted!")
+        } catch (err) {
+            console.log(err);
+        }
     };
-
-    console.log(formData)
-
   return (
     <Container>
-        <h2>Forms - Practice 2</h2>
-        <Form>
+        <h2>Form Validation</h2>
+        <Form onSubmit={handleSubmit}>
             <Form.Group>
                 <Form.Label></Form.Label>
                 <Form.Control
                     type='text'
                     name='firstName'
-                    placeholder='Please enter your first name'
+                    placeholder='Please Enter your first name'
                     value={formData.firstName}
                     onChange={handleFormData}
+                    required
                 />
             </Form.Group>
             <Form.Group>
@@ -39,9 +56,10 @@ const FormPractice2 = () => {
                 <Form.Control
                     type='text'
                     name='lastName'
-                    placeholder='Please enter your last name'
+                    placeholder='Please Enter your last name'
                     value={formData.lastName}
                     onChange={handleFormData}
+                    required
                 />
             </Form.Group>
             <Form.Group>
@@ -49,9 +67,10 @@ const FormPractice2 = () => {
                 <Form.Control
                     type='email'
                     name='email'
-                    placeholder='Please enter your email'
+                    placeholder='Please Enter your email'
                     value={formData.email}
                     onChange={handleFormData}
+                    required
                 />
             </Form.Group>
             <Form.Group>
@@ -59,15 +78,16 @@ const FormPractice2 = () => {
                 <Form.Control
                     type='tel'
                     name='phone'
-                    placeholder='Please enter your phone number'
+                    placeholder='Please Enter your phone number'
                     value={formData.phone}
                     onChange={handleFormData}
+                    required
                 />
             </Form.Group>
-            <Button type='submit' className='mt-3' onClick={handleSubmit}>SEND</Button>
+            <Button type='submit' className='mt-3'>Send Form</Button>
         </Form>
     </Container>
   )
 }
 
-export default FormPractice2
+export default FormValidation

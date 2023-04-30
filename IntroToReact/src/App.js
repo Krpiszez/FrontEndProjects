@@ -38,6 +38,8 @@ import Form1 from "./components/22-forms/Form1";
 import Form2 from "./components/22-forms/Form2";
 import FormPractice1 from "./components/22-forms/FormPractice1";
 import FormPractice2 from "./components/22-forms/FormPractice2";
+import FormValidation from "./components/22-forms/FormValidation";
+import FormikYup1 from "./components/23-formik-yup/01-formik-yup";
 import ProgressBar from "./components/implementation/ProgressBar";
 import Impl1 from "./components/implementation/impl1";
 import ToDo from "./components/implementation/to-do-app";
@@ -160,6 +162,10 @@ const App = () => {
             <FormPractice1/>
             <br/>
             <FormPractice2/>
+            <br/>
+            <FormValidation/>
+            <br/>
+            <FormikYup1/>
             <br/>
         </div>
     )
