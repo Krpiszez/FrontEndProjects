@@ -1,10 +1,13 @@
 import { useFormik } from 'formik'
-import React from 'react'
-import { Button, Container, Form } from 'react-bootstrap'
+import React, { useEffect, useState } from 'react'
+import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import * as Yup from 'yup'
 import axios from 'axios'
+import FormikYup2Data from './02-formik-yup-data'
 
 const FormikYup2 = () => {
+
+    const [formData, setFormData] = useState([]);
 
     const initialValues = {
         firstName:"",
@@ -38,6 +41,7 @@ const FormikYup2 = () => {
         console.log("Form Submitted!");
         try {
             const resp = await axios.post("https://644d2ac957f12a1d3dd95135.mockapi.io/users", values);
+            // loadData();
             console.log(resp.data);
         } catch (err) {
             console.log(err);
@@ -45,11 +49,30 @@ const FormikYup2 = () => {
         }
     }
 
+    const loadData = async (e) => {
+        try {
+            const resp = await axios.get("https://644d2ac957f12a1d3dd95135.mockapi.io/users")
+            .then((response)=>{
+                setFormData(response.data)
+            });
+            console.log(formData);
+        } catch (err) {
+            console.log(err);
+            alert("There is an unexpected issue!")
+        }
+    }
+
+    useEffect(()=>{
+        loadData();
+    }, [])
+
     const formik = useFormik({
         initialValues,
         validationSchema,
         onSubmit
     })
+
+    const getData = () => loadData();
 
   return (
     <Container>
@@ -102,6 +125,20 @@ const FormikYup2 = () => {
             </Form.Group>
             <Button type='submit' className='mt-3'>Send Form</Button>
         </Form>
+        <Button className='mt-2' onClick={getData}>Get Data</Button>
+        <Col className=''>
+            {
+                formData.map((t)=>{
+                    return(
+                        
+                            <Col lg={4}>
+                                <FormikYup2Data key={t.id}{...t}/>
+                            </Col>
+                        
+                        )
+                })
+            }
+        </Col>
     </Container>
   )
 }
