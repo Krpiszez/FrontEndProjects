@@ -60,12 +60,8 @@ const FormikYup2 = () => {
                 <Form.Label></Form.Label>
                 <Form.Control
                     type='text'
-                    name='firstName'
-                    id='firstName'
                     placeholder='Please enter your First name'
-                    value={formik.values.firstName}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
+                    {...formik.getFieldProps("firstName")}
                     isValid={formik.touched.firstName && !formik.errors.firstName}
                     isInvalid={formik.touched.firstName && formik.errors.firstName}
                 />
@@ -75,12 +71,8 @@ const FormikYup2 = () => {
                 <Form.Label></Form.Label>
                 <Form.Control
                     type='text'
-                    name='lastName'
-                    id='lastName'
                     placeholder='Please enter your Last name'
-                    value={formik.values.lastName}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
+                    {...formik.getFieldProps("lastName")}
                     isValid={formik.touched.lastName && !formik.errors.lastName}
                     isInvalid={formik.touched.lastName && formik.errors.lastName}
                 />
@@ -90,12 +82,8 @@ const FormikYup2 = () => {
                 <Form.Label></Form.Label>
                 <Form.Control
                     type='email'
-                    name='email'
-                    id='email'
                     placeholder='Please enter your email'
-                    value={formik.values.email}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
+                    {...formik.getFieldProps("email")}
                     isValid={formik.touched.email && !formik.errors.email}
                     isInvalid={formik.touched.email && formik.errors.email}
                 />
