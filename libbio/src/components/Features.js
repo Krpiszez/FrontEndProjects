@@ -19,14 +19,14 @@ const Features = () => {
                 </div>
                 </div>
                 <div style={{position: "relative"}} className="grid-x align-center grid-padding-x grid-padding-y margin-bottom-120">
-                <div className="cell large-6 medium-12 small-12 order-1 large-order-1 medium-order-2 small-order-2">
-                    <img className="edge-image" src={lib4} style={{borderRadius: "10px", width: "auto", height: "auto"}} alt="Cloud sync" />
-                </div>
                 <div className="cell large-6 medium-12 small-12 order-2 large-order-2 medium-order-1 small-order-1" style={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
                     <FaCloud style={{fontSize: "3em", marginBottom: "20px"}} />
                     <h3>Cloud Sync keeps your collections updated across multiple devices.</h3>
                     <p className="lead">Access your collections from anywhere on virtually any device.</p>
                 </div>
+                <div className="cell large-6 medium-12 small-12 order-1 large-order-1 medium-order-2 small-order-2">
+                    <img className="edge-image" src={lib4} style={{borderRadius: "10px", width: "auto", height: "auto"}} alt="Cloud sync" />
+                </div>                
                 </div>
                 <div className="grid-x align-center grid-padding-x grid-padding-y margin-bottom-120">
                 <div className="cell large-6 medium-12 small-12" style={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
