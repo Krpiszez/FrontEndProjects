@@ -3,11 +3,12 @@ import { Carousel, Col, Container, Row } from 'react-bootstrap'
 import lib1 from '../assets/image/lib1.jpg'
 import lib2 from '../assets/image/lib2.jpg'
 import lib3 from '../assets/image/lib3.jpg'
+import '../assets/scss/Home.scss';
 
 const Home = () => {
   return (
   <Container fluid="md">
-  <h1 className="text-center">LIBRARIES</h1>
+  <h1 className="text-center custom-heading">LIBRARIES</h1>
   <Carousel >
     <Carousel.Item>
       <img

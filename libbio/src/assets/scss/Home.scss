@@ -1,0 +1,19 @@
+// Define your custom styles
+$heading-font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+$heading-color: #ffffff;
+$heading-bg: #0077ff;
+$heading-padding: 1em;
+$heading-border-radius: 0.5em;
+$heading-font-size: 3em;
+
+// Apply the styles to the h1 element
+.custom-heading {
+  font-family: $heading-font;
+  font-size: $heading-font-size;
+  color: $heading-color;
+  background-color: $heading-bg;
+  padding: $heading-padding;
+  border-radius: $heading-border-radius;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+}
