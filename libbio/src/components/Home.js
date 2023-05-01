@@ -7,7 +7,7 @@ import '../assets/scss/Home.scss';
 
 const Home = () => {
   return (
-  <Container fluid="md">
+  <Container fluid="md" style={{marginTop:'10rem'}}>
   <h1 className="text-center custom-heading">LIBRARIES</h1>
   <Carousel >
     <Carousel.Item>

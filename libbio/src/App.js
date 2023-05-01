@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Home from './components/Home'
 import Libraries from './components/Libraries'
 import Try from './components/Try'
+import Features from './components/Features'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Home/>
         <br/>
         <Libraries/>
+        <Features/>
         {/* <Try/> */}
     </div>
   )

@@ -3,7 +3,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 
 const Header = () => {
     return (
-    <Navbar bg="primary" variant="dark" expand="xl" style={{ fontFamily: 'Roboto', fontSize: '1.5rem' }}>
+    <Navbar bg="primary" variant="dark" expand="xl" style={{ fontFamily: 'Roboto', fontSize: '1.5rem' }} fixed="top">
             <Container fluid>
             <Navbar.Brand href="/" style={{fontSize:'2rem'}}>
                 <img src="../open-book-64.png" alt="book" className="mr-2"/>LibBio
