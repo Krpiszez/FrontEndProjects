@@ -44,6 +44,7 @@ import FormikYup2 from "./components/23-formik-yup/02-formik-yup";
 import ProgressBar from "./components/implementation/ProgressBar";
 import Impl1 from "./components/implementation/impl1";
 import ToDo from "./components/implementation/to-do-app";
+import Header from "./components/header/Header";
 
 const App = () => {
     const conditionalRender = true;
@@ -51,6 +52,7 @@ const App = () => {
     
     return (
         <BrowserRouter>
+        <Header/>
             <Routes>
                 <Route path="/" />
                 <Route path="/bananas" element={<Bananas />} />
