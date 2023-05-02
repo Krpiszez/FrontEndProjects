@@ -45,6 +45,7 @@ import ProgressBar from "./components/implementation/ProgressBar";
 import Impl1 from "./components/implementation/impl1";
 import ToDo from "./components/implementation/to-do-app";
 import Header from "./components/header/Header";
+import NotFound from "./components/not-found/NotFound";
 
 const App = () => {
     const conditionalRender = true;
@@ -54,6 +55,7 @@ const App = () => {
         <BrowserRouter>
         <Header/>
             <Routes>
+                <Route path="*" element={<NotFound />} />
                 <Route path="/" />
                 <Route path="/bananas" element={<Bananas />} />
                 <Route path="/jsx">
