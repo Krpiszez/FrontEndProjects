@@ -46,88 +46,110 @@ import Impl1 from "./components/implementation/impl1";
 import ToDo from "./components/implementation/to-do-app";
 import Header from "./components/header/Header";
 import NotFound from "./components/not-found/NotFound";
+import StoreContext from "./store";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Exchange from "./components/24-context-api/Exchange";
 
 const App = () => {
     const conditionalRender = true;
     const conditionalRender2 = true;
+    const [currencies, setCurrencies] = useState([]);
+
+    const loadData = async () => {
+        try {
+            const resp = await axios.get("https://api.frankfurter.app/latest?from=TRY");
+            console.log(resp.data)
+            setCurrencies(resp.data);        
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    useEffect(() => {
+        loadData()
+    },[])
     
     return (
-        <BrowserRouter>
-        <Header/>
-            <Routes>
-                <Route path="*" element={<NotFound />} />
-                <Route path="/" />
-                <Route path="/bananas" element={<Bananas />} />
-                <Route path="/jsx">
-                    <Route index element={<Jsx1 />} />
-                    <Route path="2" element={<Jsx2 />} />
-                    <Route path="3" element={<Jsx3 />} />
-                    <Route path="4" element={<Jsx4 />} />
-                    <Route path="5" element={<Jsx5 />} />
-                </Route>
-                <Route path="/styles">
-                    <Route index element={<Style1 />} />
-                    <Route path="2" element={<Style2 />} />
-                    <Route path="3" element={<Style3 />} />
-                    <Route path="4" element={<Style4 />} />
-                </Route>
-                <Route path="/digital-clock-application">
-                    <Route index element={<DigitalClockApplication1 />} />
-                    <Route path="2" element={<DigitalClockApplication2 textColor="white"
-                        bgColor="red" />} />
-                    <Route path="3" element={<DigitalClockApplication3 textColor="white"
-                        bgColor="purple" />} />
-                </Route>
-                <Route path="/greetings" element={<Greetings />} />
-                <Route path="/images" element={<Images1 />} />
-                <Route path="/gallery" element={<ImageGallery />} />
-                <Route path="/profile-card" element={<ProfileCard />} />
-                <Route path="/bootstrap-classical" element={<BootstrapClassical />} />
-                <Route path="/bootstrap-dynamical" element={<BootstrapDynamical />} />
-                <Route path="/icons">
-                    <Route path="react" element={<ReactIcons />} />
-                    <Route path="material" element={<MaterialIcons />} />
-                </Route>
-                <Route path="/events" element={<Event />} />
-                <Route path="/state">
-                    <Route path="1" element={<State1 />} />
-                    <Route path="2" element={<State2 />} />
-                </Route>
-                <Route path="/birthday" element={<Birthday />} />
-                {
-                    conditionalRender && <Route path="/useeffect" element={<UseEffect01 name="Techpro Education" />} />
-                }
-                <Route path="/counter2" element={<Counter2 />} />
-                <Route path="/filter-list" element={<FilterList />} />
-                <Route path="/useref-hook" element={<UseRefHook />} />
-                <Route path="/next-input" element={<NextInput />} />
-                {
-                    conditionalRender2 && <Route path="/class-type-component" element={<ClassTypeComponent carName="Mercedes" />} />
-                }
-                {
-                    conditionalRender2 && <Route path="/function-type-component" element={<FunctionTypeComponent carName="Mercedes" />} />
-                }
-                {/* <Route path="/user-cards" element={<UserCards />} /> */}
-                <Route path="/countries" element={<Countries />} />
-                <Route path="/parent-component" element={<ParentComponent />} />
-                <Route path="form">
-                    <Route index element={<Form1 />} />
-                    <Route path="2" element={<Form2 />} />
-                    <Route path="practice">
-                        <Route path="1" element={<FormPractice1 />} />
-                        <Route path="2" element={<FormPractice2 />} />
+        <StoreContext.Provider value={{currencies}}>
+            <BrowserRouter>
+                <Header/>
+                <Routes>
+                    <Route path="/exchange" element={<Exchange/>}/>
+                    <Route path="*" element={<NotFound />} />
+                    <Route path="/" />
+                    <Route path="/bananas" element={<Bananas />} />
+                    <Route path="/jsx">
+                        <Route index element={<Jsx1 />} />
+                        <Route path="2" element={<Jsx2 />} />
+                        <Route path="3" element={<Jsx3 />} />
+                        <Route path="4" element={<Jsx4 />} />
+                        <Route path="5" element={<Jsx5 />} />
                     </Route>
-                    <Route path="validation" element={<FormValidation />} />
-                    <Route path="yup">
-                        <Route path="1" element={<FormikYup1 />} />
-                        <Route path="2" element={<FormikYup2 />} />
+                    <Route path="/styles">
+                        <Route index element={<Style1 />} />
+                        <Route path="2" element={<Style2 />} />
+                        <Route path="3" element={<Style3 />} />
+                        <Route path="4" element={<Style4 />} />
                     </Route>
-                </Route>
-                {/* /form/practice/2 */}
-                <Route path="to-do" element={<ToDo/>}/>
-                <Route path="impl" element={<Impl1/>}/>
-            </Routes>
-        </BrowserRouter>
+                    <Route path="/digital-clock-application">
+                        <Route index element={<DigitalClockApplication1 />} />
+                        <Route path="2" element={<DigitalClockApplication2 textColor="white"
+                            bgColor="red" />} />
+                        <Route path="3" element={<DigitalClockApplication3 textColor="white"
+                            bgColor="purple" />} />
+                    </Route>
+                    <Route path="/greetings" element={<Greetings />} />
+                    <Route path="/images" element={<Images1 />} />
+                    <Route path="/gallery" element={<ImageGallery />} />
+                    <Route path="/profile-card" element={<ProfileCard />} />
+                    <Route path="/bootstrap-classical" element={<BootstrapClassical />} />
+                    <Route path="/bootstrap-dynamical" element={<BootstrapDynamical />} />
+                    <Route path="/icons">
+                        <Route path="react" element={<ReactIcons />} />
+                        <Route path="material" element={<MaterialIcons />} />
+                    </Route>
+                    <Route path="/events" element={<Event />} />
+                    <Route path="/state">
+                        <Route path="1" element={<State1 />} />
+                        <Route path="2" element={<State2 />} />
+                    </Route>
+                    <Route path="/birthday" element={<Birthday />} />
+                    {
+                        conditionalRender && <Route path="/useeffect" element={<UseEffect01 name="Techpro Education" />} />
+                    }
+                    <Route path="/counter2" element={<Counter2 />} />
+                    <Route path="/filter-list" element={<FilterList />} />
+                    <Route path="/useref-hook" element={<UseRefHook />} />
+                    <Route path="/next-input" element={<NextInput />} />
+                    {
+                        conditionalRender2 && <Route path="/class-type-component" element={<ClassTypeComponent carName="Mercedes" />} />
+                    }
+                    {
+                        conditionalRender2 && <Route path="/function-type-component" element={<FunctionTypeComponent carName="Mercedes" />} />
+                    }
+                    {/* <Route path="/user-cards" element={<UserCards />} /> */}
+                    <Route path="/countries" element={<Countries />} />
+                    <Route path="/parent-component" element={<ParentComponent />} />
+                    <Route path="form">
+                        <Route index element={<Form1 />} />
+                        <Route path="2" element={<Form2 />} />
+                        <Route path="practice">
+                            <Route path="1" element={<FormPractice1 />} />
+                            <Route path="2" element={<FormPractice2 />} />
+                        </Route>
+                        <Route path="validation" element={<FormValidation />} />
+                        <Route path="yup">
+                            <Route path="1" element={<FormikYup1 />} />
+                            <Route path="2" element={<FormikYup2 />} />
+                        </Route>
+                    </Route>
+                    {/* /form/practice/2 */}
+                    <Route path="to-do" element={<ToDo/>}/>
+                    <Route path="impl" element={<Impl1/>}/>
+                </Routes>
+            </BrowserRouter>
+        </StoreContext.Provider>
     )
 };
 

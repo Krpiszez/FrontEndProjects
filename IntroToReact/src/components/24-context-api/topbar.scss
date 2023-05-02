@@ -1,0 +1,21 @@
+.exchange{
+    background-color: darkblue;
+    padding: 1rem;
+    color: white;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        > div {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
