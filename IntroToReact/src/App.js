@@ -1,4 +1,4 @@
-import MyHouse from "./components/01-my-house/my-house";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Bananas } from "./components/01-my-house/my-house";
 import Jsx1 from "./components/02-jsx/jsx1";
 import Jsx2 from "./components/02-jsx/jsx2";
@@ -48,129 +48,82 @@ import ToDo from "./components/implementation/to-do-app";
 const App = () => {
     const conditionalRender = true;
     const conditionalRender2 = true;
+    
     return (
-        <div className="app">
-            <MyHouse />
-            <Bananas />
-            <br/>
-            <Jsx1 />
-            <br/>
-            <Jsx2 />
-            <br/>
-            <Jsx3 />
-            <br/>
-            <Jsx4 />
-            <br/>
-            <Jsx5 />
-            <br/>
-            <Jsx5>
-            </Jsx5>
-            <br/>
-            <Style1 />
-            <br/>
-            <Style2 />
-            <br/>
-            <Style3 />
-            <br/>
-            <Style4 />
-            <br/>
-            <DigitalClockApplication1 />
-            <br/>
-            <Greetings />
-            <br/>
-            <Impl1 />
-            <br/>
-            <DigitalClockApplication2
-                textColor="white"
-                bgColor="red"
-            />
-            <br/>
-            <DigitalClockApplication2
-                textColor="white"
-                bgColor="blue"
-            />
-            <br/>
-            <Images1/>
-            <br/>
-            <ImageGallery/>
-            <br/>
-            <ProfileCard
-                name = "Walker"
-                image = "profile-card.jpg"
-                location = "Nashville, Tennesse"
-                shot = "2"
-                followers = "234"
-                following = "327"            
-            />
-            <br/>
-            <BootstrapClassical/>
-            <br/>
-            <BootstrapDynamical/>
-            <br/>
-            <ReactIcons/>
-            <br/>
-            <MaterialIcons/>
-            <br/>
-            <Event/>
-            <br/>
-            <State1/>
-            <br/>
-            <State2/>
-            <br/>
-            <Birthday/>
-            <br/>
-            <ProgressBar/>
-            <br/>
-            {
-                conditionalRender &&  <UseEffect01 name="Omar"/>
-            }
-            {/* <UseEffect01/> */}
-            <br/>
-            <Counter2/>
-            <br/>
-            <DigitalClockApplication3
-            textColor="white"
-            bgColor="purple"
-            />
-            <br/>
-            <FilterList/>
-            <br/>
-            <UseRefHook/>
-            <br/>
-            <NextInput/>
-            <br/>
-            {
-                conditionalRender2 && <ClassTypeComponent car={"BMW"}/>
-            }
-            <br/>
-            {
-                conditionalRender2 && <FunctionTypeComponent car={"BMW"}/>
-            }
-            
-            <br/>
-            {/* <UserCards/> */}
-            <br/>
-            {/* <Countries/> */}
-            <br/>
-            <ParentComponent/>
-            <br/>
-            <Form1/>
-            <br/>
-            <Form2/>
-            <br/>
-            {/* <ToDo/> */}
-            <br/>
-            <FormPractice1/>
-            <br/>
-            <FormPractice2/>
-            <br/>
-            <FormValidation/>
-            <br/>
-            <FormikYup1/>
-            <br/>
-            <FormikYup2/>
-            <br/>
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" />
+                <Route path="/bananas" element={<Bananas />} />
+                <Route path="/jsx">
+                    <Route index element={<Jsx1 />} />
+                    <Route path="2" element={<Jsx2 />} />
+                    <Route path="3" element={<Jsx3 />} />
+                    <Route path="4" element={<Jsx4 />} />
+                    <Route path="5" element={<Jsx5 />} />
+                </Route>
+                <Route path="/styles">
+                    <Route index element={<Style1 />} />
+                    <Route path="2" element={<Style2 />} />
+                    <Route path="3" element={<Style3 />} />
+                    <Route path="4" element={<Style4 />} />
+                </Route>
+                <Route path="/digital-clock-application">
+                    <Route index element={<DigitalClockApplication1 />} />
+                    <Route path="2" element={<DigitalClockApplication2 textColor="white"
+                        bgColor="red" />} />
+                    <Route path="3" element={<DigitalClockApplication3 textColor="white"
+                        bgColor="purple" />} />
+                </Route>
+                <Route path="/greetings" element={<Greetings />} />
+                <Route path="/images" element={<Images1 />} />
+                <Route path="/gallery" element={<ImageGallery />} />
+                <Route path="/profile-card" element={<ProfileCard />} />
+                <Route path="/bootstrap-classical" element={<BootstrapClassical />} />
+                <Route path="/bootstrap-dynamical" element={<BootstrapDynamical />} />
+                <Route path="/icons">
+                    <Route path="react" element={<ReactIcons />} />
+                    <Route path="material" element={<MaterialIcons />} />
+                </Route>
+                <Route path="/events" element={<Event />} />
+                <Route path="/state">
+                    <Route path="1" element={<State1 />} />
+                    <Route path="2" element={<State2 />} />
+                </Route>
+                <Route path="/birthday" element={<Birthday />} />
+                {
+                    conditionalRender && <Route path="/useeffect" element={<UseEffect01 name="Techpro Education" />} />
+                }
+                <Route path="/counter2" element={<Counter2 />} />
+                <Route path="/filter-list" element={<FilterList />} />
+                <Route path="/useref-hook" element={<UseRefHook />} />
+                <Route path="/next-input" element={<NextInput />} />
+                {
+                    conditionalRender2 && <Route path="/class-type-component" element={<ClassTypeComponent carName="Mercedes" />} />
+                }
+                {
+                    conditionalRender2 && <Route path="/function-type-component" element={<FunctionTypeComponent carName="Mercedes" />} />
+                }
+                {/* <Route path="/user-cards" element={<UserCards />} /> */}
+                <Route path="/countries" element={<Countries />} />
+                <Route path="/parent-component" element={<ParentComponent />} />
+                <Route path="form">
+                    <Route index element={<Form1 />} />
+                    <Route path="2" element={<Form2 />} />
+                    <Route path="practice">
+                        <Route path="1" element={<FormPractice1 />} />
+                        <Route path="2" element={<FormPractice2 />} />
+                    </Route>
+                    <Route path="validation" element={<FormValidation />} />
+                    <Route path="yup">
+                        <Route path="1" element={<FormikYup1 />} />
+                        <Route path="2" element={<FormikYup2 />} />
+                    </Route>
+                </Route>
+                {/* /form/practice/2 */}
+                <Route path="to-do" element={<ToDo/>}/>
+                <Route path="impl" element={<Impl1/>}/>
+            </Routes>
+        </BrowserRouter>
     )
 };
 
