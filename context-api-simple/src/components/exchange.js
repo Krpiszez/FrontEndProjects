@@ -1,8 +1,12 @@
 import React from 'react'
+import {TopBar, Content} from '.'
 
 const Exchange = () => {
   return (
-    <div>Exchange</div>
+    <div>
+      <TopBar/>
+      <Content/>
+    </div>
   )
 }
 

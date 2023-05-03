@@ -1,9 +1,11 @@
-import React from 'react'
-
+import React from 'react';
+import { Content, TopBar } from '../components';
 const ExchangePage = () => {
-  return (
-    <div>ExchangePage</div>
-  )
-}
-
-export default ExchngePagea
+    return (
+        <div>
+            <TopBar />
+            <Content />
+        </div>
+    )
+};
+export default ExchangePage;
