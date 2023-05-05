@@ -27,7 +27,7 @@ const Content = () => {
   useEffect(()=>{
     const newResult = (amount / currencies[currency]).toFixed(2);
     setResult(newResult);
-  },[currency, amount])
+  },[currency, amount, currencies])
 
 
   return (
