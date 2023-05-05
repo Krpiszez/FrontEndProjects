@@ -11,6 +11,11 @@ export const Counter2 = () => {
         setCheck(1);
     }
 
+    const handleZero = () => {
+        setCheck(0);
+        setCounter(0);
+    }
+
     useEffect(()=>{
         if(check===0) return;
         document.title = `${counter} times clicked!`;
@@ -23,6 +28,7 @@ export const Counter2 = () => {
     <Container>
         <h4>{counter} times clicked on the button below</h4>
         <Button variant='warning' onClick={handleCounter}>Click me!</Button>
+        <Button variant='warning' onClick={handleZero}>Click to 0!</Button>
     </Container>
   )
 }
