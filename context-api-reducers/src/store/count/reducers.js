@@ -19,11 +19,10 @@ const countReducer = (state = countInitialState, action) => {
             return{
                 ...state,
                 count: 0
-            }
-            
-           
-    
-        default:
-            break;
+            }      
+           default:
+            return state;
     }
 } 
+
+export default countReducer;

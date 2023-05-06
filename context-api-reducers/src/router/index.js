@@ -1,7 +1,7 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import {settings} from "../constants"
-import { Login, Home } from "../pages";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { settings } from '../constants';
+import { Home, Login } from '../pages';
 
 const AppRouter = () => {
     // const routes = settings.routes;
@@ -9,15 +9,14 @@ const AppRouter = () => {
     // const login = routes.login;
     const { routes: { home, login } } = settings;
 
-
-  return (
-    <Router>
-        <Routes>
-            <Route path={home} element={<Home/>}/>
-            <Route path={login} element={<Login/>}/>
-        </Routes>
-    </Router>
-  )
+    return (
+        <Router>
+            <Routes>
+                <Route path={home} element={<Home />} />
+                <Route path={login} element={<Login />} />
+            </Routes>
+        </Router>
+    )
 }
 
-export default AppRouter
+export default AppRouter;
