@@ -1,22 +1,26 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux'
 
 const Content = () => {
+    const { localization: { language }, theme: { theme } } = useSelector(state => state);
+    // const states = useSelector(state => state);
+    // const {localization, theme} = states;
+    // const {language} = localization;
+    // const {theme} = theme;
 
-  const {language} = useSelector(state=>state.localization)
-  
-  const {trivialInfo : {welcome, aboutUs, contact}} = require(`../../utils/languages/${language}.json`);
 
-  
+    const { trivialInfo: { welcome, aboutUs, contact } } = require(`../../utils/languages/${language}.json`);
 
-  return (
-    <Container className='text-center'>
-      <h1>{welcome}</h1>
-      <h2>{aboutUs}</h2>
-      <h3>{contact}</h3>
-    </Container>
-  )
+    return (
+        <Container
+            className={`mt-5 text-center text-${theme === "light" ? "dark" : "light"}`}
+        >
+            <h1>{welcome}</h1>
+            <h2>{aboutUs}</h2>
+            <h3>{contact}</h3>
+        </Container>
+    )
 }
 
-export default Content
+export default Content;
