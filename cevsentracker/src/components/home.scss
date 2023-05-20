@@ -51,4 +51,45 @@
   .not-checked {
     background-color: #f5c6cb;
   }
+
+  .home-container {
+    margin-top: 200px;
+  }
+  
+  .text-container {
+    margin-bottom: 20px;
+  }
+  
+  .carousel-container {
+    height: 300px;
+    overflow-y: auto;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+    margin-bottom: 200px;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 767px) {
+    .text-container {
+      text-align: center;
+    }
+    .carousel-container {
+      margin-top: 100px;
+      height: 800px;
+      margin-bottom: 400px;
+    }
+  }
+  
+  @media (max-width: 575px) {
+    .home-container {
+      margin-top: 100px;
+    }
+  }
   
