@@ -1,0 +1,54 @@
+.centered-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .text {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    /* Add any other SCSS properties you want to style your text */
+  }
+  
+  .custom-table th {
+    background-color: #f0f0f0;
+  }
+  
+  .custom-table td {
+    text-align: center;
+  }
+
+  .custom-table {
+    margin-top: 50px;
+  }
+  
+  .table-header {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .table-date {
+    font-weight: bold;
+    color: red;
+  }
+  
+  .table-cell {
+    text-align: center;
+  }
+  
+  .checked {
+    background-color: #c3e6cb;
+  }
+  
+  .not-checked {
+    background-color: #f5c6cb;
+  }
+  
