@@ -54,9 +54,11 @@ const Home = (id) => {
       <h5 className='text'>Risale-i Nur talebelerinin en esaslı virdi Cevşenü’l-Kebirdir. Üstadlarının tavsiyesi ile devamlı okuma gayreti içindedirler.
          Hatta Bediüzzaman “Cevşenü’l-Kebiri, Hizb-i Nuriyeyi Salavât ile neşri, nurculara ve ehl-i imana büyük bir hizmettir” buyurarak
          hem okunmasını hem neşrini tavsiye etmişlerdir.</h5>
-      <Carousel interval={10000}>
-        {renderCarouselItems(fazilet)}
-      </Carousel>
+         <div style={{ height: '300px' }}>
+        <Carousel interval={5000}>
+          {renderCarouselItems(fazilet)}
+        </Carousel>
+        </div>
       
       <Table striped bordered className="custom-table">
         <thead>
