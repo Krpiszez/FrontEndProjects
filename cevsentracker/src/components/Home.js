@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Carousel, Container, Form, Table } from 'react-bootstrap'
+import {  Carousel, Container, Form, Table } from 'react-bootstrap'
 import './home.scss';
 import fazilet from '../assets/data/fazilet.json'
 import oku from '../assets/image/oku.jpg'
 
 const Home = (id) => {
-  const headers = ['1-20', '21-40', '41-60', '61-80', '81-100']; // Başlık verileri
   const names = ['Faruk', 'Enes', 'Mustafa', 'Mehmet', 'Ömer']; // İsim verileri
   const dates = ['20-05', '21-05', '22-05', '23-05', '24-05']; // Tarih verileri
 
