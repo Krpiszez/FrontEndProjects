@@ -7,7 +7,19 @@ import oku from '../assets/image/oku.jpg';
 const Home = () => {
   const names = ['Faruk', 'Enes', 'Mustafa', 'Mehmet', 'Ömer']; // İsim verileri
   const dates = ['20-05', '21-05', '22-05', '23-05', '24-05']; // Tarih verileri
+  const currentDate = new Date();
+const currentMonth = currentDate.getMonth();
+const currentYear = currentDate.getFullYear();
+const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
 
+const dates2 = [];
+for (let i = 1; i <= daysInMonth; i++) {
+  const formattedDate = `${i < 10 ? '0' + i : i}-${currentMonth + 1 < 10 ? '0' + (currentMonth + 1) : currentMonth + 1}`;
+  dates2.push(formattedDate);
+  
+}
+console.log(dates2)
+console.log(dates)
   const [checkboxStates, setCheckboxStates] = useState({});
 
   const handleCheckboxChange = (date, name) => {
@@ -28,10 +40,11 @@ const Home = () => {
   const cb = (date, name) => (
     <Form.Check
       type="checkbox"
+      className='form'
       id={`${date}-${name}`}
       checked={checkboxStates[`${date}-${name}`]}
       onChange={() => handleCheckboxChange(date, name)}
-      label="20 Sayfa"
+      label={window.innerWidth <= 575 ? "20" : "20 Bab"}
     />
   );
 
@@ -59,7 +72,7 @@ const Home = () => {
       </div>
 
       <div className="carousel-container">
-        <Carousel interval={1000}>
+        <Carousel interval={10000}>
           {renderCarouselItems(fazilet)}
         </Carousel>
       </div>
@@ -68,14 +81,15 @@ const Home = () => {
         <Table striped bordered className="custom-table">
           <thead>
             <tr>
-              <th className="table-header">Hafta 1</th>
+              <th className="table-header">May</th>
               {names.map((name, index) => (
-                <th className="table-header" key={index}>{name}</th>
+                <th className="table-header" key={index}>
+                  {window.innerWidth <= 575 ? name.substr(0, 2) : name}</th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {dates.map((date, dateIndex) => (
+            {dates2.map((date, dateIndex) => (
               <tr key={dateIndex}>
                 <th className="table-date">{date}</th>
                 {names.map((name, nameIndex) => (
