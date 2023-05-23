@@ -1,0 +1,109 @@
+@use "../../../assets/styles/scss/mixins" as m;
+@use "../../../assets/styles/scss/variables" as v;
+
+$breakpoint: 992px;
+
+.header {
+    @include m.flexbox($align-items: stretch);
+    background-color: v.$color4;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 1px v.$color3;
+
+    @media (max-width: 992px) {
+        @include m.flexbox(column, space-between, stretch);
+        position: relative;
+    }
+
+    .logo {
+        background-color: v.$color6;
+        border-radius: 0 0 0 5px;
+
+        @media (max-width: 992px) {
+            border-radius: 0;
+        }
+    }
+
+    .menus {
+        @include m.flexbox(column, center, stretch);
+        flex: 1;
+
+        .topbar {
+            @include m.flexbox(row, space-between, center, 1rem);
+            border-bottom: 1px solid v.$color3;
+            flex: 1;
+            padding: 1rem;
+
+            @media (max-width: $breakpoint) {
+                border-bottom: 0;
+            }
+
+            ul {
+                @include m.reset-list();
+
+                a {
+                    @include m.flexbox($align-items: center, $gap: 0.5rem);
+                    text-decoration: none;
+                    color: v.$color1;
+
+                    &:hover{
+                        color: v.$color2;
+                    }
+                }
+
+                &.contact-bar {
+                    @include m.flexbox($gap: 1rem);
+                    font-size: 0.8rem;
+
+                    @media (max-width: $breakpoint) {
+                        flex: 1;
+                    }
+
+                    a {
+                        color: v.$color3;
+                        &:hover{
+                            color: v.$color2;
+                        }
+                    }
+                }
+
+                &.social-bar {
+                    @include m.flexbox($justify-content: flex-end, $gap: 1rem);
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .menubar {
+            flex: 1;
+            padding: 1rem;
+            @media (max-width: 992px) {
+                position: absolute;
+                top: 1rem;
+                left: 1rem;
+                right: 1rem;
+
+                .container {
+                    justify-content: flex-end;
+                }
+
+                .navbar-collapse {
+                    background-color: v.$color4;
+                    padding: 1rem;
+                    margin-top: 3rem;
+                    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+                }
+            }
+
+            a {
+                @include m.flexbox($align-items: center, $gap: 0.5rem);
+                &:hover{
+                    color: v.$color5;
+                }
+            }
+
+            .navbar-toggler {
+                background-color: v.$color4;
+            }
+        }
+    }
+}

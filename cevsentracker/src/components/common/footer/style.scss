@@ -1,0 +1,38 @@
+@use "../../../assets/styles/scss/mixins" as m;
+@use "../../../assets/styles/scss/variables" as v;
+
+footer {
+    background-color: v.$color6;
+    padding: 5rem 0;
+    text-align: center;
+
+    position: sticky;
+    top: 80%;
+
+    img {
+        margin-bottom: 2rem;
+    }
+
+    ul {
+        @include m.reset-list();
+        @include m.flexbox(column, flex-start, center, 1rem);
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                color: v.$color2;
+            }
+
+            &.active {
+                color: v.$color5;
+            }
+        }
+    }
+
+    h2 {
+        font-weight: 800;
+        font-size: 1.7rem;
+        margin-bottom: 2rem;
+    }
+}

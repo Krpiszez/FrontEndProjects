@@ -1,0 +1,45 @@
+@use "../../../assets/styles/scss/mixins" as m;
+@use "../../../assets/styles/scss/variables" as v;
+
+$breakpointLg: 992px;
+$breakpointSm: 450px;
+
+.user-menu {
+    @include m.flexbox($gap: 0.5rem);
+
+    .dropdown {
+        @media (max-width: $breakpointLg) {
+            width: 100%;
+        }
+
+        .dropdown-toggle {
+            color: v.$color4;
+            @media (max-width: $breakpointSm) {
+                width: 100%;
+            }
+        }
+    }
+
+    .dropdown-menu {
+        @media (max-width: $breakpointLg) {
+            width: 100%;
+            position: static;
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .dropdown-divider {
+        @media (max-width: $breakpointLg) {
+            display: none;
+        }
+    }
+
+    .btn-primary {
+        &:hover {
+            background-color: v.$color2;
+            border-color: v.$color2;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@use "../../../assets/styles/scss/variables" as v;
+@use "../../../assets/styles/scss/mixins" as m;
+
+.register-form {
+    width: 350px;
+
+    button.btn {
+        width: 100%;
+        text-transform: uppercase;
+    }
+
+    p {
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,17 @@
+@use "../../../assets/styles/scss/variables" as v;
+@use "../../../assets/styles/scss/mixins" as m;
+
+.login-form {
+    width: 350px;
+
+    button.btn {
+        width: 100%;
+        text-transform: uppercase;
+    }
+
+    p {
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.8rem;
+    }
+}
