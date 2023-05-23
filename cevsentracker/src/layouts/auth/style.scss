@@ -1,0 +1,54 @@
+@use "../../assets/styles/scss/variables" as v;
+@use "../../assets/styles/scss/mixins" as m;
+
+.auth-layout {
+    .banner {
+        @include m.bg-image("../../assets/images/auth/bg.jpg");
+        min-height: 100vh;
+        @include m.flexbox(row, center, center);
+        position: relative;
+
+        &::after {
+            @include m.watermark(v.$color2, 0.2);
+        }
+
+        img {
+            z-index: 1;
+        }
+
+        .toolbar {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            color: v.$color2;
+            z-index: 1;
+
+            @include m.flexbox($gap: 1rem);
+
+            @media (max-width: 992px) {
+                top: 50px;
+                right: 1rem;
+                transform: translateY(-50%);
+            }
+
+            svg {
+                font-size: 3rem;
+                cursor: pointer;
+            }
+        }
+
+        @media (max-width: 992px) {
+            min-height: auto;
+            height: 100px;
+        }
+    }
+
+    .forms {
+        @include m.flexbox(row, center, center);
+        padding: 4rem;
+
+        @media (max-width: 576px) {
+            padding: 4rem 2rem;
+        }
+    }
+}
