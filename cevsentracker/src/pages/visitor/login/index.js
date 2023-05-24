@@ -21,8 +21,8 @@ const LoginPage = () => {
             const data = await login(values);
             encryptedLocalStorage.setItem("token", data.token);
             const respUser = await getUser();
-            console.log(respUser.data)
-            dispatch(loginSuccess(respUser.data))
+            console.log(respUser)
+            dispatch(loginSuccess(respUser))
             swalToast("You have successfully logged in!", "success");
             navigate(home);
         } catch (error) {

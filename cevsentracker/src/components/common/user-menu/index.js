@@ -3,32 +3,25 @@ import { Button, Dropdown } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { config } from '../../../config';
 import { useDispatch, useSelector } from 'react-redux';
-// import { swalQuestion } from '../../../utils';
-// import { logout } from '../../../store';
-// import { encryptedLocalStorage } from '../../../api';
+import { swalQuestion } from '../../../utils';
+import { logout } from '../../../store';
+import { encryptedLocalStorage } from '../../../api';
 import "./style.scss";
 
 const UserMenu = () => {
-    const { routes: { home, user: { userRoute, userHabitTrack }, admin: { admin }, login, register } } = config;
+    const { routes: { home, user: { userRoute, userHabits, userHabitTrack }, admin: { admin }, login, register } } = config;
     const navigate = useNavigate();
-    // const dispatch = useDispatch();
-    // const { isLoggedIn, user } = useSelector(state => state.auth);
-    const user = {
-      firstName : "Ali",
-      lastName : "Veli",
-      roles : "Administrator"
-    }
-
-    const isLoggedIn = false;
+    const dispatch = useDispatch();
+    const { isLoggedIn, user } = useSelector(state => state.auth);
 
     const handleLogout = () => {
-        // swalQuestion("Logout", "Are you sure you want to logout?").then(response => {
-        //     if (response.isConfirmed) {
-        //         dispatch(logout());
-        //         encryptedLocalStorage.removeItem("token");
-        //         navigate(home);
-        //     }
-        // })
+        swalQuestion("Logout", "Are you sure you want to logout?").then(response => {
+            if (response.isConfirmed) {
+                dispatch(logout());
+                encryptedLocalStorage.removeItem("token");
+                navigate(home);
+            }
+        })
     }
 
     return (
@@ -37,7 +30,7 @@ const UserMenu = () => {
                 isLoggedIn
                     ? <Dropdown align="end">
                         <Dropdown.Toggle>
-                            {user?.firstName} {user?.lastName}
+                            {user?.name}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             {
@@ -53,6 +46,9 @@ const UserMenu = () => {
 
                             <Dropdown.Item as={Link} to={`/${userRoute}`}>
                                 Profile
+                            </Dropdown.Item>
+                            <Dropdown.Item as={Link} to={`/${userRoute}/${userHabits}`}>
+                                Habits
                             </Dropdown.Item>
                             <Dropdown.Item as={Link} to={`/${userRoute}/${userHabitTrack}`}>
                                 Track Habits

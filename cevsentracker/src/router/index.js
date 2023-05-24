@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { AboutPage, HomePage, LoginPage, PrivacyPolicyPage, RegisterPage, UserProfilePage, UserHabitTrackPage, UserHabitTrackDetailsPage, ErrorPage, AdminDashboardPage, AdminUsersPage, AdminUserDetailsPage, AdminHabitsPage, AdminHabitDetailsPage, AdminHabitTracksPage, AdminHabitTrackDetailsPage } from '../pages';
+import { AboutPage, HomePage, LoginPage, PrivacyPolicyPage, RegisterPage, UserProfilePage, UserHabitTrackPage, UserHabitTrackDetailsPage, ErrorPage, AdminDashboardPage, AdminUsersPage, AdminUserDetailsPage, AdminHabitsPage, AdminHabitDetailsPage, AdminHabitTracksPage, AdminHabitTrackDetailsPage, UserHabitsPage } from '../pages';
 import { config } from '../config';
 import { AuthLayout, VisitorLayout, UserLayout, AdminLayout } from '../layouts';
 
@@ -8,13 +8,12 @@ const AppRouter = () => {
   const {
     routes: {
       about,
-      contact,
       home,
       login,
       privacyPolicy,
       register,
-      user: { userRoute, userHabitTrack },
-      admin: { admin, dashboard, adminUsers, adminUserDetails, adminHabits, adminHabitDetails, adminHabitTracks, adminHabitTrackDetails },
+      user: { userRoute, userHabitTrack, userHabits },
+      admin: { admin, dashboard, adminUsers, adminHabits, adminHabitTracks },
       errors: { notFoundRoute, forbiddenRoute }
     },
     projectDetails:{
@@ -34,6 +33,7 @@ const AppRouter = () => {
             <Route element={<UserLayout />}>
               <Route path={userRoute}>
                 <Route index element={<UserProfilePage />} />
+                <Route path={userHabits} element={<UserHabitsPage/>} />
                 <Route path={userHabitTrack}>
                     <Route index element={<UserHabitTrackPage />} />
                     <Route path={`:habitTrackId`} element={<UserHabitTrackDetailsPage />} />
@@ -41,8 +41,8 @@ const AppRouter = () => {
               </Route>
             </Route>
 
-            <Route path={notFoundRoute} element={<ErrorPage title="Oops! Page Not Found" desc="The page you are looking for does not exist." />} />
-            <Route path={forbiddenRoute} element={<ErrorPage title="Oops! Forbidden Access" desc="You are not authorized to access this page." />} />
+            <Route path={notFoundRoute} element={<ErrorPage {...notFound} />} />
+            <Route path={forbiddenRoute} element={<ErrorPage {...forbidden} />} />
           </Route>
 
           <Route element={<AuthLayout />}>
