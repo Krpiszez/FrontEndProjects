@@ -2,7 +2,7 @@ import React from 'react'
 import { Outlet, useNavigate } from 'react-router-dom';
 import { Col, Container, Row } from "react-bootstrap";
 import { config } from '../../config';
-import { Logo } from '../../assets/image';
+import { LogoTransparent } from '../../assets/image';
 import { HomeOutlined, CancelOutlined } from "@mui/icons-material";
 import "./style.scss";
 
@@ -14,7 +14,7 @@ const AuthLayout = () => {
         <Container fluid className='auth-layout'>
             <Row>
                 <Col lg={6} className='banner'>
-                    <img src={Logo} alt={name} title={name} />
+                    <img src={LogoTransparent} alt={name} title={name} />
                     <div className='toolbar'>
                         <CancelOutlined
                             onClick={() => navigate(-1)}
