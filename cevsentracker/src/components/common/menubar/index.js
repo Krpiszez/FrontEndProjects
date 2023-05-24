@@ -8,7 +8,7 @@ import { config } from '../../../config';
 const Menubar = () => {
     const { pathname } = useLocation();
 
-    const { routes: { home, about, user: {userRoute, habitTrack} } } = config;
+    const { routes: { home, about, user: {userRoute, userHabitTrack} } } = config;
 
     return (
         <div className='menubar'>
@@ -20,7 +20,7 @@ const Menubar = () => {
                             <Nav.Link as={Link} to={home} active={pathname === home}>
                                 <Home /> Home
                             </Nav.Link>
-                            <Nav.Link as={Link} to={`${userRoute}/${habitTrack}`} active={pathname === habitTrack}>
+                            <Nav.Link as={Link} to={`${userRoute}/${userHabitTrack}`} active={pathname === userHabitTrack}>
                                 <CheckBox /> Track Habits
                             </Nav.Link>
                             <Nav.Link as={Link} to={about} active={pathname === about}>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { AboutPage, ContactPage, HomePage, LoginPage, PrivacyPolicyPage, RegisterPage, UserProfilePage, UserHabitTrackPage, UserHabitTrackDetailsPage, ErrorPage, AdminDashboardPage, AdminUsersPage, AdminUserDetailsPage, AdminHabitsPage, AdminHabitDetailsPage, AdminHabitTracksPage, AdminHabitTrackDetailsPage } from '../pages';
+import { AboutPage, HomePage, LoginPage, PrivacyPolicyPage, RegisterPage, UserProfilePage, UserHabitTrackPage, UserHabitTrackDetailsPage, ErrorPage, AdminDashboardPage, AdminUsersPage, AdminUserDetailsPage, AdminHabitsPage, AdminHabitDetailsPage, AdminHabitTracksPage, AdminHabitTrackDetailsPage } from '../pages';
 import { config } from '../config';
 import { AuthLayout, VisitorLayout, UserLayout, AdminLayout } from '../layouts';
 
@@ -29,7 +29,6 @@ const AppRouter = () => {
           <Route element={<VisitorLayout />}>
             <Route index element={<HomePage />} />
             <Route path={about} element={<AboutPage />} />
-            <Route path={contact} element={<ContactPage />} />
             <Route path={privacyPolicy} element={<PrivacyPolicyPage />} />
 
             <Route element={<UserLayout />}>

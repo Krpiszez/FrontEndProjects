@@ -183,7 +183,7 @@ export const config = {
             }
         }
     },
-    API_URL: 'https://carrental-v3-backend.herokuapp.com',
+    API_URL: 'http://localhost:8080',
     endpoints: {
         auth: {
             login: "/login",
@@ -218,7 +218,7 @@ export const config = {
         user: {
             userRoute: "user",
             userHabits: 'habits',
-            userHabitTrack: 'habitTrack',
+            userHabitTrack: 'habit-track',
         },
         errors: {
             notFoundRoute: '*',

@@ -3,13 +3,13 @@
 
 .auth-layout {
     .banner {
-        @include m.bg-image("../../assets/images/auth/bg.jpg");
+        @include m.bg-image("../../assets/image/auth/bg.png");
         min-height: 100vh;
         @include m.flexbox(row, center, center);
         position: relative;
 
         &::after {
-            @include m.watermark(v.$color2, 0.2);
+            @include m.watermark(v.$color2, 0.3);
         }
 
         img {

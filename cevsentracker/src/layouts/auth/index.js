@@ -2,7 +2,7 @@ import React from 'react'
 import { Outlet, useNavigate } from 'react-router-dom';
 import { Col, Container, Row } from "react-bootstrap";
 import { config } from '../../config';
-import { Logo } from '../../assets/images';
+import { Logo } from '../../assets/image';
 import { HomeOutlined, CancelOutlined } from "@mui/icons-material";
 import "./style.scss";
 

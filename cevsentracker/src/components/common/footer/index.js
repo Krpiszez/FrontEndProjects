@@ -3,12 +3,12 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import { config } from '../../../config';
 import { Logo } from '../../../assets/image';
-import { Home, Info, Headphones, PrivacyTip, CheckBox } from "@mui/icons-material";
+import { Home, Info, CheckBox } from "@mui/icons-material";
 import "./style.scss";
 import { ContactInfo } from '../../';
 
 const Footer = () => {
-    const { routes: { home, about, user:{userRoute, habitTrack} }, projectDetails: { name, footerText } } = config;
+    const { routes: { home, about, user:{userRoute, userHabitTrack} }, projectDetails: { name, footerText } } = config;
     const { pathname } = useLocation();
 
     return (
@@ -37,7 +37,7 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link as={Link} to={`${userRoute}/${habitTrack}`} className={pathname === `/${userRoute}/${habitTrack}` ? "active" : ""}>
+                                <Link as={Link} to={`${userRoute}/${userHabitTrack}`} className={pathname === `/${userRoute}/${userHabitTrack}` ? "active" : ""}>
                                     <CheckBox /> Track Habits
                                 </Link>
                             </li>

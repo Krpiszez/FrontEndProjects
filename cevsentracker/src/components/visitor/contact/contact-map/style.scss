@@ -1,0 +1,7 @@
+@use "../../../../assets/styles/scss/variables" as v;
+
+.contact-map {
+    height: 500px;
+    border-top: 3px solid v.$color1;
+    border-bottom: 3px solid v.$color1;
+}

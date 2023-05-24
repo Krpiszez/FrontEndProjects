@@ -9,16 +9,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import "./style.scss";
 
 const UserMenu = () => {
-    const { routes: { home, user: { userRoute, habitTrack }, admin: { admin }, login, register } } = config;
-    // const navigate = useNavigate();
+    const { routes: { home, user: { userRoute, userHabitTrack }, admin: { admin }, login, register } } = config;
+    const navigate = useNavigate();
     // const dispatch = useDispatch();
     // const { isLoggedIn, user } = useSelector(state => state.auth);
     const user = {
       firstName : "Ali",
       lastName : "Veli",
+      roles : "Administrator"
     }
 
-    const isLoggedIn = true;
+    const isLoggedIn = false;
 
     const handleLogout = () => {
         // swalQuestion("Logout", "Are you sure you want to logout?").then(response => {
@@ -53,7 +54,7 @@ const UserMenu = () => {
                             <Dropdown.Item as={Link} to={`/${userRoute}`}>
                                 Profile
                             </Dropdown.Item>
-                            <Dropdown.Item as={Link} to={`/${userRoute}/${habitTrack}`}>
+                            <Dropdown.Item as={Link} to={`/${userRoute}/${userHabitTrack}`}>
                                 Track Habits
                             </Dropdown.Item>
                             <Dropdown.Item onClick={handleLogout}>
@@ -62,15 +63,12 @@ const UserMenu = () => {
                         </Dropdown.Menu>
                     </Dropdown>
                     : <>
-                        {/* <Button className='text-info' onClick={() => navigate(login)}>
+                        <Button className='text-info' onClick={() => navigate(login)}>
                             Login
                         </Button>
                         <Button className='text-info' onClick={() => navigate(register)}>
                             Register
-                        </Button> */}
-                        <Button className='text-info'>
-                            Register
-                        </Button>
+                        </Button>                    
                     </>
             }
         </div>
