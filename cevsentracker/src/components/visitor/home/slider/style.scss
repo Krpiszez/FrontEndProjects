@@ -1,0 +1,47 @@
+@use "../../../../assets//styles/scss/variables" as v;
+@use "../../../../assets//styles/scss/mixins" as m;
+
+.slider {
+    .swiper-wrapper {
+        .swiper-slide {
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background-color: v.$color-bg-transparent;
+            }
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100vh;
+            }
+
+            .content {
+                position: absolute;
+                top: 30%;
+                left: 50%;
+                transform: translate(-50%);
+                text-align: center;
+                color: v.$color4;
+                text-shadow: 0 0 30px v.$color1;
+                z-index: 5;
+
+                h2 {
+                    font-size: 3rem;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: v.$color2;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: v.$color2;
+    }
+}

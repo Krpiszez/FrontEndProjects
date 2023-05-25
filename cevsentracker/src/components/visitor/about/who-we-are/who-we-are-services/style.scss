@@ -1,0 +1,26 @@
+@use "../../../../../assets/styles/scss/variables" as v;
+@use "../../../../../assets/styles/scss/mixins" as m;
+
+.who-we-are-services {
+    @include m.flexbox(column, center, center, 1rem);
+
+    @media (min-width: 768px) {
+        border-right: 1px solid v.$color1;
+
+        &:nth-child(3n) {
+            border-right: none;
+        }
+    }
+
+    svg {
+        color: v.$color1;
+        font-size: 5rem;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: v.$color1;
+        text-align: center;
+    }
+}
