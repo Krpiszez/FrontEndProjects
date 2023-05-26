@@ -3,10 +3,16 @@ import "./style.scss";
 import { config } from '../../../../config';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper';
+import { useNavigate } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
-const { projectDetails: { slider } } = config;
+const { projectDetails: { slider }, routes: {register} } = config;
+
 
 const Slider = () => {
+    
+    const navigate = useNavigate();
+
     const pagination = {
         clickable: true,
     }
@@ -29,6 +35,9 @@ const Slider = () => {
                         <div className='content'>
                             <h2>{slide.title}</h2>
                             <p>{slide.desc}</p>
+                            <Button onClick={() => navigate(register)}>
+                            Get Started
+                        </Button>
                         </div>
                         <img
                             src={require(`../../../../assets/image/slider/${slide.image}`)}

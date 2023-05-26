@@ -85,3 +85,7 @@ export const updateUserAdmin = async (id, userInfo) => {
     });
     return response.data;
 };
+
+// export const getUserHabits = async () => {
+//     const response = await axios.get()
+// }

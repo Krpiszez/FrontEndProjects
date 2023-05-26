@@ -7,6 +7,8 @@ import { loginFormInitialValues, loginFormValidationSchema, swalToast } from '..
 import { Button, ButtonGroup, Form, Spinner } from "react-bootstrap";
 import { encryptedLocalStorage, getUser, login } from '../../../api';
 import { loginFailure, loginSuccess } from '../../../store';
+import PasswordInput from '../../../components/common/password-input';
+import FormTypes from '../../../components/common/form-types';
 
 const LoginPage = () => {
     const [loading, setLoading] = useState(false);
@@ -39,38 +41,22 @@ const LoginPage = () => {
         onSubmit
     });
 
-    const validCheck = (field) => ({
-        isInvalid: formik.touched[field] && formik.errors[field],
-        isValid: formik.touched[field] && !formik.errors[field],
-    });
-
     return (
         <Form noValidate onSubmit={formik.handleSubmit}>
-            <Form.Group className='mb-3'>
-                <Form.Label>User name</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Enter user name"
-                    {...formik.getFieldProps("userName")}
-                    {...validCheck("userName")}
-                />
-                <Form.Control.Feedback type="invalid">
-                    {formik.errors.userName}
-                </Form.Control.Feedback>
-            </Form.Group>
+            <FormTypes
+                formik={formik}
+                label='User name'
+                name="userName"
+                type='userName'
+                placeholder="Enter your user name"
+            />
 
-            <Form.Group className='mb-3'>
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                    type="password"
-                    placeholder="Password"
-                    {...formik.getFieldProps("password")}
-                    {...validCheck("password")}
-                />
-                <Form.Control.Feedback type="invalid">
-                    {formik.errors.password}
-                </Form.Control.Feedback>
-            </Form.Group>
+            <PasswordInput
+                formik={formik}
+                label='Password'
+                name='password'
+                placeholder='Enter your password'
+            />
 
             <ButtonGroup className="w-100">
   <Button

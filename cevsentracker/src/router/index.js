@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AboutPage, HomePage, LoginPage, PrivacyPolicyPage, RegisterPage, UserProfilePage, UserHabitTrackPage, UserHabitTrackDetailsPage, ErrorPage, AdminDashboardPage, AdminUsersPage, AdminUserDetailsPage, AdminHabitsPage, AdminHabitDetailsPage, AdminHabitTracksPage, AdminHabitTrackDetailsPage, UserHabitsPage } from '../pages';
 import { config } from '../config';
 import { AuthLayout, VisitorLayout, UserLayout, AdminLayout } from '../layouts';
+import { Habits } from '../components';
 
 const AppRouter = () => {
   const {
@@ -12,6 +13,7 @@ const AppRouter = () => {
       login,
       privacyPolicy,
       register,
+      habit,
       user: { userRoute, userHabitTrack, userHabits },
       admin: { admin, dashboard, adminUsers, adminHabits, adminHabitTracks },
       errors: { notFoundRoute, forbiddenRoute }
@@ -29,6 +31,7 @@ const AppRouter = () => {
             <Route index element={<HomePage />} />
             <Route path={about} element={<AboutPage />} />
             <Route path={privacyPolicy} element={<PrivacyPolicyPage />} />
+            <Route path={habit} element={<Habits />} />
 
             <Route element={<UserLayout />}>
               <Route path={userRoute}>

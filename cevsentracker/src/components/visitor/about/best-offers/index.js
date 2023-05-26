@@ -11,7 +11,7 @@ const BestOffers = () => {
 
     return (
         <div className='best-offers'>
-            <SectionHeader title1="Get Our" title2="Best Offers" />
+            <SectionHeader title1="Stay" title2="Motivated" />
             <div className='offers'>
                 <Container>
                     <Row>

@@ -3,13 +3,15 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import { config } from '../../../config';
 import { Logo } from '../../../assets/image';
-import { Home, Info, CheckBox } from "@mui/icons-material";
+import { Home, Info, CheckBox, Pool } from "@mui/icons-material";
 import "./style.scss";
 import { ContactInfo } from '../../';
+import { useSelector } from 'react-redux';
 
 const Footer = () => {
-    const { routes: { home, about, user:{userRoute, userHabitTrack} }, projectDetails: { name, footerText } } = config;
+    const { routes: { home, about, user:{userRoute, userHabitTrack, userHabits} }, projectDetails: { name, footerText } } = config;
     const { pathname } = useLocation();
+    const { isLoggedIn, user } = useSelector(state => state.auth);
 
     return (
         <footer>
@@ -36,11 +38,27 @@ const Footer = () => {
                                     <Home /> Home
                                 </Link>
                             </li>
-                            <li>
-                                <Link as={Link} to={`${userRoute}/${userHabitTrack}`} className={pathname === `/${userRoute}/${userHabitTrack}` ? "active" : ""}>
-                                    <CheckBox /> Track Habits
-                                </Link>
-                            </li>
+                            {
+                                isLoggedIn && (
+                                    <>
+                                    <li>
+                                        <Link as={Link} to={`${userRoute}/${userHabits}`} className={pathname === `/${userRoute}/${userHabits}` ? "active" : ""}>
+                                            <Pool /> Habits
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link as={Link} to={`${userRoute}/${userHabitTrack}`} className={pathname === `/${userRoute}/${userHabitTrack}` ? "active" : ""}>
+                                            <CheckBox /> Track Habits
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link as={Link} to={`${userRoute}`} className={pathname === `/${userRoute}` ? "active" : ""}>
+                                            <Home /> Hello {user?.name} 
+                                        </Link>
+                                    </li>
+                            </>
+                                )
+                            }
                             <li>
                                 <Link to={about} className={pathname === `/${about}` ? "active" : ""}>
                                     <Info /> About Us

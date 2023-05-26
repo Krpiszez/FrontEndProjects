@@ -33,7 +33,7 @@ export const config = {
                         direction: '',
                     },
                     {
-                        title: 'Stay Motivated',
+                        title: 'Keep up',
                         desc: 'Receive reminders and notifications to stay motivated and focused on your habits.',
                         direction: '',
                     },
@@ -163,10 +163,17 @@ export const config = {
             },
             {
                 id: 2,
-                image: "slider2.jpg",
+                image: "slider3.jpg",
                 title: "Build Lasting Habits",
                 desc: "Track your progress and develop healthy routines with our Habit Tracker"
-            }
+            },
+            {
+                id: 3,
+                image: "slider4.jpg",
+                title: "Achieve Your Dream By inch a Day",
+                desc: "The biggest dreams you have will be accomplished step by step"
+            },
+            
         ],
         mapUrl: "https://goo.gl/maps/aekRiJbXVYuqVMxp7",
         footerText: "Start tracking your habits today and see the positive changes in your life. Choose from a variety of habit categories and get personalized insights.",
@@ -190,8 +197,9 @@ export const config = {
             register: "/register",
         },
         habits: {
+            get: "/habit",
             create: "/habits/create",
-            track: "/habits/track",
+            track: "/track",
         },
         files: {
             get: "/files",
@@ -224,7 +232,7 @@ export const config = {
             notFoundRoute: '*',
             forbiddenRoute: 'forbidden',
         },
-        habits: 'habits',
+        habit: 'habit',
         habitTrack: 'habit-track',
     },
 }     
