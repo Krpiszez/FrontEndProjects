@@ -2,43 +2,57 @@
 @use "../../../../assets/styles/scss/mixins" as m;
 
 .vehicle-card {
-    border: 1px solid v.$color4;
-    text-align: center;
-    color: v.$color1;
+  border: 1px solid v.$color4;
+  text-align: center;
+  color: v.$color1;
 
-    .image {
-        background-image: linear-gradient(65deg, v.$color6, v.$color1);
-        border-radius: 5px 5px 0 0;
+  .image {
+    background-image: linear-gradient(65deg, v.$color6, v.$color1);
+    border-radius: 5px 5px 0 0;
+  }
+
+  h4 {
+    font-weight: 400;
+    padding: 1rem;
+    color: v.$color2;
+    text-shadow: 2px 2px 4px v.$color6;
+  }
+
+  a {
+    width: 100%;
+    color: v.$color4;
+    background-color: v.$color2;
+    border-radius: 0 0 5px 5px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: v.$color3;
     }
+  }
 
-    h4 {
-        font-weight: 400;
-        padding: 1rem;
+  .details {
+    @include m.flexbox();
+    flex-wrap: wrap;
+
+    > div {
+      @include m.flexbox(row, center, center, 0.5rem);
+      padding: 0.7rem;
+      flex: 1 0 50%;
+      border-top: 1px solid v.$color4;
+      border-right: 1px solid v.$color4;
+      white-space: nowrap;
+
+      svg {
         color: v.$color2;
-    }
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
 
-    a {
-        width: 100%;
-        color: v.$color4;
-
-        border-radius: 0 0 5px 5px;
-    }
-
-    .details {
-        @include m.flexbox();
-        flex-wrap: wrap;
-
-        > div {
-            @include m.flexbox(row, center, center, 0.5rem);
-            padding: 0.7rem;
-            flex: 1 0 50%;
-            border-top: 1px solid v.$color4;
-            border-right: 1px solid v.$color4;
-            white-space: nowrap;
-
-            svg {
-                color: v.$color2;
-            }
+        &:hover {
+          transform: rotate(180deg);
         }
+      }
     }
+  }
 }

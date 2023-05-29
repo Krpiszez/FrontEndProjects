@@ -47,6 +47,14 @@ export const addHabitToUser = async (habitId) => {
     return response.data;
   };
 
+  export const addHabitToUserByHabitName = async (habitName) => {
+    console.log(authHeader());
+    const response = await axios.patch(`${API_URL + userPath + get}?habitName=${habitName}`, null, {
+      headers: authHeader()
+    });
+    return response.data;
+  };
+
 // ADMIN ENDPOINTS
 
 export const getUsersByPage = async (

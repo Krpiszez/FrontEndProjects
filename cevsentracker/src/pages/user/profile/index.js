@@ -1,5 +1,5 @@
 import React from 'react'
-import { PageHeader, Spacer, UserAvatar, UserPasswordForm, UserProfileForm } from '../../../components';
+import { PageHeader, Spacer, UserAvatar, UserPasswordForm, UserTrackHabits } from '../../../components';
 import { config } from '../../../config';
 import { Col, Container, Row } from 'react-bootstrap';
 
@@ -15,13 +15,11 @@ const UserProfilePage = () => {
                     <Col lg={2} className='text-center'>
                         <UserAvatar />
                     </Col>
-                    <Col lg={4}>
-                        <UserProfileForm />
+                    <Col lg={8}>
+                        <UserTrackHabits />
                     </Col>
-                    <Col lg={4}>
-                        <UserPasswordForm />
-                    </Col>
-                </Row>
+                </Row>    
+            <UserPasswordForm />                    
             </Container>
             <Spacer />
         </>

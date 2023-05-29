@@ -20,24 +20,40 @@ const UserTrackHabits = () => {
     }
   };
 
+  // Group completion records by date
+  const groupedRecords = {};
+  completionRecords.forEach(record => {
+    const date = record.date;
+    if (!groupedRecords[date]) {
+      groupedRecords[date] = [];
+    }
+    groupedRecords[date].push(record);
+  });
+
   return (
     <Table striped bordered>
       <thead>
         <tr>
-          <th>Habit</th>
-          <th>User</th>
           <th>Date</th>
+          <th>Habit</th>
           <th>Completed</th>
         </tr>
       </thead>
       <tbody>
-        {completionRecords.map((record) => (
-          <tr key={record.id}>
-            <td>{record.habit.name}</td>
-            <td>{record.user.userName}</td>
-            <td>{record.date}</td>
-            <td>{record.completed ? 'Yes' : 'No'}</td>
-          </tr>
+        {Object.keys(groupedRecords).map(date => (
+          <React.Fragment key={date}>
+            <tr>
+              <td rowSpan={groupedRecords[date].length}>{date}</td>
+              <td>{groupedRecords[date][0].habit.name}</td>
+              <td>{groupedRecords[date][0].completed ? 'Yes' : 'No'}</td>
+            </tr>
+            {groupedRecords[date].slice(1).map(record => (
+              <tr key={record.id}>
+                <td>{record.habit.name}</td>
+                <td>{record.completed ? 'Yes' : 'No'}</td>
+              </tr>
+            ))}
+          </React.Fragment>
         ))}
       </tbody>
     </Table>
