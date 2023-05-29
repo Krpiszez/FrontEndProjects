@@ -19,6 +19,8 @@ export { default as UserAvatar } from "./user/avatar";
 // export { default as UserReservationDetailsAccordion } from "./user/reservation-details/accordion";
 // export { default as UserReservationDetailsPanel } from "./user/reservation-details/panel";
 export { default as UserHabits } from "./user/user-habits";
+export { default as UserTrackHabits } from "./user/user-track-habits";
+export { default as AddHabit } from "./user/add-habit";
 // export { default as UserReservationsTable } from "./user/reservations/reservations-table";
 // export { default as BookingForm } from "./visitor/vehicle-details/booking-form";
 // export { default as DetailsPanel } from "./visitor/vehicle-details/panel";

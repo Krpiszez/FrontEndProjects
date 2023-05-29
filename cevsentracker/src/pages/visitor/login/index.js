@@ -21,6 +21,7 @@ const LoginPage = () => {
         setLoading(true);
         try {
             const data = await login(values);
+            console.log(data)
             encryptedLocalStorage.setItem("token", data.token);
             const respUser = await getUser();
             console.log(respUser)

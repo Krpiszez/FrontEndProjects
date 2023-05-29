@@ -31,7 +31,7 @@ const Menubar = () => {
                                             <CheckBox /> Track Habits
                                         </Nav.Link>
                                         <Nav.Link as={Link} to={userRoute} active={pathname === userRoute}>
-                                            <Home /> Hello {user?.name} 
+                                            <Home /> Hello {user?.userName} 
                                         </Nav.Link>
                                     </>
                                 )

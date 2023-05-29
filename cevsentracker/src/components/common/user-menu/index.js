@@ -30,7 +30,7 @@ const UserMenu = () => {
                 isLoggedIn
                     ? <Dropdown align="end">
                         <Dropdown.Toggle>
-                            {user?.name}
+                            {user?.userName}
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             {

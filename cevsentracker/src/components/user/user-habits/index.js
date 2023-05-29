@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Card, CardContent, Typography, Switch } from '@mui/material';
-import { getUser, getHabitById, trackHabit } from '../../../api';
+import { getHabitById, deleteHabit, getRecord, trackHabit, getUser } from '../../../api';
+import { getCurrentDate } from '../../../utils';
+import './style.scss'
 
 const UserHabits = () => {
   const [loading, setLoading] = useState(true);
   const [habits, setHabits] = useState([]);
+  const [completion, setCompletion] = useState([]);
 
-  useEffect(() => {
-    loadData();
-  }, []);
-
-  const loadData = async () => {
+const loadData = async () => {
     try {
       const data = await getUser();
-      console.log(data)
       const habitIds = data.habits;
 
       const habitData = await Promise.all(
@@ -31,38 +29,62 @@ const UserHabits = () => {
       setHabits(filteredHabits);
     } catch (error) {
       console.log(error);
-    }finally{
-        setLoading(false);
+    } finally {
+      setLoading(false);
     }
   };
-
+  
+  useEffect(() => {
+    loadData();
+    fetchCompletionRecords();
+  }, []);
   const handleSwitchChange = async (habitId, completed) => {
     try {
-        console.log(habitId)
-        console.log(completed)
-      // Send API request to update habit completion
+      const response = await getRecord();
+      console.log(response)
+      const arr = response.map((r) => r.habit.id);
+      console.log(!arr.includes(habitId))
+      if(!arr.includes(habitId) || arr.length === 0){
       await trackHabit(habitId, completed);
+      }else {
+        await deleteHabit(habitId);
+      }
+      fetchCompletionRecords();
     } catch (error) {
       console.log(`Error updating habit with ID ${habitId}:`, error);
     }
   };
+  const fetchCompletionRecords = async () => {
+    try {
+      const response = await getRecord();
+      setCompletion(response);
+    } catch (error) {
+      console.error('Error fetching habit completion records:', error);
+    }
+  };
+  const isChecked = (habitId) => {
+  const currentDate = getCurrentDate();
+  const matchingEntries = completion.filter((r) => r.habit.id === habitId && r.date === currentDate);
+  return matchingEntries.length > 0;
+  }
+  console.log(completion)
   return (
     <Container>
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div>
+        <div className="user-habits-container">
           {habits.map((habit) => (
-            <Card key={habit.id} sx={{ mb: 2 }}>
+            <Card key={habit.id} className="user-habits-card">
               <CardContent>
-                <Typography variant="h6" component="div">
+                <Typography variant="h6" component="div" className="user-habits-heading">
                   {habit.name}
                 </Typography>
-                <Typography variant="body2">{habit.description}</Typography>
+                <Typography variant="body2" className="user-habits-description">{habit.description}</Typography>
                 <Switch
-                  checked={habit.completed}
+                  checked={isChecked(habit.id)}
                   onChange={(event) =>
-                    handleSwitchChange(habit.id, event.target.checked)
+                  handleSwitchChange(habit.id, event.target.checked)
                   }
                 />
               </CardContent>

@@ -12,9 +12,13 @@ const UserPasswordForm = () => {
     const { builtIn } = user;
 
     const onSubmit = async (values) => {
+        const dto = {
+            oldPassword : values.currentPassword,
+            newPassword : values.newPassword
+        }
         setLoading(true);
         try {
-            await updatePassword(values);
+            await updatePassword(dto);
             swalToast("Password updated successfully!", "success")
             formik.resetForm();
         } catch (error) {

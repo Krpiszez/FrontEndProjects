@@ -2,7 +2,7 @@ import axios from "axios";
 import { authHeader } from "./";
 import { config } from "../config";
 
-const { API_URL, endpoints: { auth, userPath } } = config;
+const { API_URL, endpoints: { auth, userPath, habits:{get} } } = config;
 
 // VISITOR ENDPOINTS
 
@@ -33,11 +33,19 @@ export const updateUser = async (userInfo) => {
 };
 
 export const updatePassword = async (passwords) => {
-    const response = await axios.put(`${API_URL + userPath}/auth`, passwords, {
+    const response = await axios.patch(`${API_URL + userPath}`, passwords, {
         headers: authHeader()
     })
     return response.data;
 };
+
+export const addHabitToUser = async (habitId) => {
+    console.log(authHeader());
+    const response = await axios.patch(`${API_URL + userPath + get}/${habitId}`, null, {
+      headers: authHeader()
+    });
+    return response.data;
+  };
 
 // ADMIN ENDPOINTS
 

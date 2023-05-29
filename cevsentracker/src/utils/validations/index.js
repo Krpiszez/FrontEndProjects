@@ -179,3 +179,7 @@ export const adminReservationDetailsFormValidationSchema = Yup.object({
     carId: Yup.string().required("Select a car"),
     status: Yup.string().required("Select a status"),
 });
+
+export const habitFormValidationSchema = Yup.object({
+    name: Yup.string().required("Enter Habit Name To Add")
+})
