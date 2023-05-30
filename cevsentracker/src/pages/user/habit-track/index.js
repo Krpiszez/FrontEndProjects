@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageHeader, Spacer, UserTrackHabits } from '../../../components';
+import { PageHeader, Spacer, GeneralTrackHabits } from '../../../components';
 import { config } from '../../../config';
 
 const { projectDetails: { habits: { title } } } = config;
@@ -9,7 +9,7 @@ const UserHabitTrackPage = () => {
         <>
             <PageHeader title={title} />
             <Spacer />
-            <UserTrackHabits />
+            <GeneralTrackHabits />
             <Spacer />
         </>
     )

@@ -1,6 +1,7 @@
 export { default as AdminSidebar } from "./admin/sidebar";
 // export { default as DashboardCard } from "./admin/dashboard-card";
 // export { default as AdminCarousel } from "./admin/carousel";
+export { default as GeneralTrackHabits } from "./admin/general-track-habits";
 export { default as Footer } from "./common/footer";
 export { default as Header } from "./common/header";
 export { default as UserMenu } from "./common/user-menu";

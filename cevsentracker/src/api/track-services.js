@@ -31,3 +31,10 @@ export const getRecord = async () => {
     return response.data;
 };
 
+export const getAllRecords = async () => {
+    const response = await axios.get(`${API_URL + track}`, {
+        headers: authHeader()
+    });
+    return response.data;
+};
+

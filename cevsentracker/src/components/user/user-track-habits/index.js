@@ -12,7 +12,6 @@ const UserTrackHabits = () => {
   const fetchCompletionRecords = async () => {
     try {
       const records = await getRecord(); // Fetch habit completion records from the API
-      console.log(records)
       setCompletionRecords(records);
     } catch (error) {
       console.error('Error fetching habit completion records:', error);
