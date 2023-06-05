@@ -6,7 +6,7 @@ const TrialTrack = () => {
   const [trackedHabits, setTrackedHabits] = useState([]);
 
   const users = ["Mehmet", "Enes", "Ahmet", "Mehmet", "Faruk", "Omer"];
-  const toTrack = ["Cevsen Okuma", "Kuran Okuma "]
+  const toTrack = ["Cevsen Okuma", "Kuran Okuma"]
 
   useEffect(() => {
     fetchTrackedHabits();
@@ -36,33 +36,76 @@ const TrialTrack = () => {
     <Table striped bordered>
       <thead>
         <tr>
-          <th style={{textAlign:"center"}}>Date</th>
-          <th style={{textAlign:"center"}}>User</th>
-          <th style={{textAlign:"center"}}>Habit</th>
-          <th style={{textAlign:"center"}}>Completed</th>
+          <th style={{ textAlign: "center" }}>Date</th>
+          <th style={{ textAlign: "center" }}>User</th>
+          <th style={{ textAlign: "center" }}>Habit</th>
+          <th style={{ textAlign: "center" }}>Completed</th>
         </tr>
       </thead>
       <tbody>
-        {Object.entries(groupedHabits).map(([date, habits]) => (
-          <React.Fragment key={date}>
-            <tr>
-              <td rowSpan={habits.length} style={{textAlign:"center", verticalAlign: 'middle'}}>{date}</td>
-              <td>{habits[0].user.userName}</td>
-              <td>{habits[0].habit.name}</td>
-              <td style={habits[0].completed ? {backgroundColor:"green"} : {backgroundColor:"red"}}>{habits[0].completed ? 'Yes' : 'No'}</td>
-            </tr>
-            {habits.slice(1).map((habit) => (
-              <tr key={habit.id}>
-                <td>{habit.user.userName}</td>
-                <td>{habit.habit.name}</td>
-                <td style={habit.completed ? {backgroundColor:"green"} : {backgroundColor:"red"}}>{habit.completed ? 'Yes' : 'No'}</td>
-              </tr>
-            ))}
-          </React.Fragment>
-        ))}
+        <tr>
+            <td rowSpan={12} style={{ textAlign: "center", verticalAlign: 'middle' }}>date</td>
+            <td rowSpan={2} style={{ textAlign: "center", verticalAlign: 'middle' }}>Mehmet</td>
+            <td>Kuran Okuma</td>
+        </tr>
+        <tr>
+            <td>Cevsen Okuma</td>
+        </tr>
+        <tr>
+            <td rowSpan={2} style={{ textAlign: "center", verticalAlign: 'middle' }}>Enes</td>
+            <td>Kuran Okuma</td>
+        </tr>
+        <tr>
+            <td>Cevsen Okuma</td>
+        </tr>
+        <tr>
+            <td rowSpan={2} style={{ textAlign: "center", verticalAlign: 'middle' }}>Mustafa</td>
+            <td>Kuran Okuma</td>
+        </tr>
+        <tr>
+            <td>Cevsen Okuma</td>
+        </tr>
+        <tr>
+            <td rowSpan={2} style={{ textAlign: "center", verticalAlign: 'middle' }}>Ahmet</td>
+            <td>Kuran Okuma</td>
+        </tr>
+        <tr>
+            <td>Cevsen Okuma</td>
+        </tr>
+        <tr>
+            <td rowSpan={2} style={{ textAlign: "center", verticalAlign: 'middle' }}>Faruk</td>
+            <td>Kuran Okuma</td>
+        </tr>
+        <tr>
+            <td>Cevsen Okuma</td>
+        </tr>
+        <tr>
+            <td rowSpan={2} style={{ textAlign: "center", verticalAlign: 'middle' }}>Omer</td>
+            <td>Kuran Okuma</td>
+        </tr>
+        <tr>
+            <td>Cevsen Okuma</td>
+        </tr>
       </tbody>
     </Table>
   );
 };
 
 export default TrialTrack;
+
+// {Object.entries(groupedHabits).map(([date, habits]) => (
+//     <React.Fragment key={date}>
+//       {habits.map((habit, index) => (
+//         <tr key={`${date}-${index}`}>
+//           {index === 0 && (
+//             <td rowSpan={habits.length} style={{ textAlign: "center", verticalAlign: 'middle' }}>{date}</td>
+//           )}
+//           <td>{users[index]}</td>
+//           <td>{toTrack[index]}</td>
+//           <td style={{ textAlign: "center" }}>
+//             {habit.completed ? 'Yes' : 'No'}
+//           </td>
+//         </tr>
+//       ))}
+//     </React.Fragment>
+//   ))}
