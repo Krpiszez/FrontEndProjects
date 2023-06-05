@@ -8,6 +8,7 @@ const UserHabits = () => {
   const [loading, setLoading] = useState(true);
   const [habits, setHabits] = useState([]);
   const [completion, setCompletion] = useState([]);
+  const currentDate = getCurrentDate();
 
 const loadData = async () => {
     try {
@@ -36,15 +37,15 @@ const loadData = async () => {
   
   useEffect(() => {
     loadData();
-    fetchCompletionRecords();
+    fetchCompletionRecords(); // eslint-disable-next-line
   }, []);
   const handleSwitchChange = async (habitId, completed) => {
     try {
       const response = await getRecord();
-      console.log(response)
-      const arr = response.map((r) => r.habit.id);
-      console.log(!arr.includes(habitId))
-      if(!arr.includes(habitId) || arr.length === 0){
+      const arr = response.filter((r) => r.date===currentDate && r.habit.id===habitId);
+      let habitIds = [];
+      arr.forEach(r=> habitIds.push(r.habit.id))
+      if(!habitIds.includes(habitId)){
       await trackHabit(habitId, completed);
       }else {
         await deleteHabit(habitId);
@@ -57,17 +58,16 @@ const loadData = async () => {
   const fetchCompletionRecords = async () => {
     try {
       const response = await getRecord();
-      setCompletion(response);
+      const arr = response.filter(r => r.date === currentDate)
+      setCompletion(arr);
     } catch (error) {
       console.error('Error fetching habit completion records:', error);
     }
   };
   const isChecked = (habitId) => {
-  const currentDate = getCurrentDate();
-  const matchingEntries = completion.filter((r) => r.habit.id === habitId && r.date === currentDate);
+  const matchingEntries = completion.filter((r) => r.habit.id === habitId);
   return matchingEntries.length > 0;
   }
-  console.log(completion)
   return (
     <Container>
       {loading ? (
