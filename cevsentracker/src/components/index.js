@@ -17,7 +17,7 @@ export { default as Loading } from "./common/loading";
 export { default as UserPasswordForm } from "./user/password-form";
 export { default as UserProfileForm } from "./user/profile-form";
 export { default as UserAvatar } from "./user/avatar";
-// export { default as UserReservationDetailsAccordion } from "./user/reservation-details/accordion";
+export { default as UserReservationDetailsAccordion } from "./user/trial-track";
 // export { default as UserReservationDetailsPanel } from "./user/reservation-details/panel";
 export { default as UserHabits } from "./user/user-habits";
 export { default as UserTrackHabits } from "./user/user-track-habits";

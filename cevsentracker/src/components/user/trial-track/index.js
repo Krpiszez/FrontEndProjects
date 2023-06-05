@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { getAllRecords } from '../../../api';
 
-const GeneralTrackHabits = () => {
+const TrialTrack = () => {
   const [trackedHabits, setTrackedHabits] = useState([]);
+
+  const users = ["Mehmet", "Enes", "Ahmet", "Mehmet", "Faruk", "Omer"];
+  const toTrack = ["Cevsen Okuma", "Kuran Okuma "]
 
   useEffect(() => {
     fetchTrackedHabits();
@@ -62,4 +65,4 @@ const GeneralTrackHabits = () => {
   );
 };
 
-export default GeneralTrackHabits;
+export default TrialTrack;
