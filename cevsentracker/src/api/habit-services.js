@@ -20,6 +20,7 @@ export const getHabitById = async (habitId) => {
     return response.data;
 };
 
+
 export const createHabit = async (habitName) => {
     const response = await axios.post(`${API_URL + habits.get}`, habitName, 
     {

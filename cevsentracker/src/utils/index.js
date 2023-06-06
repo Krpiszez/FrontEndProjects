@@ -4,7 +4,7 @@ export { loginFormInitialValues, registerFormInitialValues, contactFormInitialVa
 
 export { habitFormValidationSchema, loginFormValidationSchema, registerFormValidationSchema, contactFormValidationSchema, bookingFormValidationSchema, userProfileFormValidationSchema, userPasswordFormValidationSchema, adminUserDetailsFormValidationSchema, adminReservationDetailsFormValidationSchema } from "./validations";
 
-export { combineDateAndTime, getCurrentDate, getDate, getTime, checkExpireDate, checkDates, formatDateTime } from "./functions/date-time";
+export { combineDateAndTime, getCurrentDate, getDate, getTime, checkExpireDate, checkDates, formatDateTime, getYesterdayDate } from "./functions/date-time";
 
 export { validCheck } from "./functions/forms";
 

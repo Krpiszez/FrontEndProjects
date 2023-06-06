@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageHeader, Spacer, UserHabits, PopularHabits, AddHabit } from '../../../components';
+import { PageHeader, Spacer, UserHabits, PopularHabits, AddHabit, YesterdayUserHabits } from '../../../components';
 import { config } from '../../../config';
 
 const { projectDetails: { habits: { title } } } = config;
@@ -9,6 +9,8 @@ const UserHabitsPage = () => {
         <>
             <PageHeader title={title} />
             <AddHabit />
+            <Spacer />
+            <YesterdayUserHabits/>
             <Spacer />
             <UserHabits />
             <Spacer />

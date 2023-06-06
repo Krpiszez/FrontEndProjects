@@ -8,6 +8,10 @@ export const getCurrentDate = () => {
     return moment().format("YYYY-MM-DD");
 }
 
+export const getYesterdayDate = () => {
+    return moment().subtract(1, 'days').format("YYYY-MM-DD");
+}
+
 export const checkDates = (dates) => {
     const { pickUpDate, pickUpTime, dropOffDate, dropOffTime } = dates;
 

@@ -209,6 +209,7 @@ export const config = {
             display: "/files/display",
         },
         userPath: "/user",
+        authPath: "/auth",
     },
     routes: {
         about: 'about',
