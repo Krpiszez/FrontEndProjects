@@ -1,7 +1,6 @@
 import React from 'react';
-import { PageHeader, Spacer, GeneralTrackHabits } from '../../../components';
+import { PageHeader, Spacer, YesterdayTrack, TrialTrack } from '../../../components';
 import { config } from '../../../config';
-import TrialTrack from '../../../components/user/trial-track';
 
 const { projectDetails: { habits: { title } } } = config;
 
@@ -10,7 +9,8 @@ const UserHabitTrackPage = () => {
         <>
             <PageHeader title={title} />
             <Spacer />
-            <GeneralTrackHabits />
+            <YesterdayTrack/>
+            {/* <GeneralTrackHabits /> */}
             <Spacer />
             <TrialTrack/>
         </>

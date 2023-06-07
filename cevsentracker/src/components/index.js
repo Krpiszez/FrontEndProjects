@@ -20,6 +20,8 @@ export { default as UserAvatar } from "./user/avatar";
 export { default as UserReservationDetailsAccordion } from "./user/trial-track";
 // export { default as UserReservationDetailsPanel } from "./user/reservation-details/panel";
 export { default as UserHabits } from "./user/user-habits";
+export { default as TrialTrack } from "./user/trial-track";
+export { default as YesterdayTrack } from "./user/yesterday-track";
 export { default as YesterdayUserHabits } from "./user/yesterday-user-habits";
 export { default as UserTrackHabits } from "./user/user-track-habits";
 export { default as AddHabit } from "./user/add-habit";

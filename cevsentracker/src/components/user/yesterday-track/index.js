@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Table } from 'react-bootstrap';
 import { getYesterdaysRecord } from '../../../api';
-import { getCurrentDate } from '../../../utils';
+import { getYesterdayDate } from '../../../utils';
 
-const TrialTrack = () => {
-  const [todaysHabits, setTodaysHabits] = useState([]);
+const YesterdayTrack = () => {
+  const [yesterdaysHabits, setYesterdaysHabits] = useState([]);
 
   const users = ["Mehmet", "Enes", "Ahmet", "Mehmet", "Faruk", "Omer"];
   const toTrack = ["Cevsen Okuma", "Kuran Okuma"];
 
-  const today = getCurrentDate();
+  const yesterday = getYesterdayDate();
 
   useEffect(() => {
     fetchTrackedHabits();// eslint-disable-next-line
@@ -18,18 +18,19 @@ const TrialTrack = () => {
   const fetchTrackedHabits = async () => {
     try {
       const habits = await getYesterdaysRecord(); // Fetch all tracked habits from the API
-      const todaysRecords = habits.filter(r => r.date === today);
+      const yesterdaysRecords = habits.filter(r => r.date === yesterday);
   
-      const todaysHabitsData = users.map(user => ({
+      const yesterdaysHabitsData = users.map(user => ({
         user,
         habits: toTrack.map(habit => ({
           habit,
-          completed: todaysRecords.some(record => record.user.userName === user && record.habit.name === habit)
+          completed: yesterdaysRecords.some(record => record.user.userName === user && record.habit.name === habit)
         }))
       }));
-
-      setTodaysHabits(todaysHabitsData);
   
+      // Update completed value for non-existing records
+    
+      setYesterdaysHabits(yesterdaysHabitsData);
     } catch (error) {
       console.error('Error fetching tracked habits:', error);
       // Handle error
@@ -38,7 +39,7 @@ const TrialTrack = () => {
 
   return (
     <Container>
-      <h1 className='date-header'>TODAYS RECORDS</h1>
+      <h1 className='date-header'>YESTERDAYS RECORDS</h1>
       <Table striped bordered>
         <thead>
           <tr>
@@ -49,13 +50,13 @@ const TrialTrack = () => {
           </tr>
         </thead>
         <tbody>
-          {todaysHabits.map(({ user, habits }, userIndex) => {
+          {yesterdaysHabits.map(({ user, habits }, userIndex) => {
             const isBothCompleted = habits.every(({ completed }) => completed);
             const isAnyCompleted = habits.some(({ completed }) => completed);
             return habits.map(({ habit, completed }, habitIndex) => (
               <tr key={`${user}-${habit}`}>
                 {(userIndex === 0 && habitIndex === 0) && (
-                  <td rowSpan={12} style={{ textAlign: "center", verticalAlign: 'middle' }}>{today}</td>
+                  <td rowSpan={12} style={{ textAlign: "center", verticalAlign: 'middle' }}>{yesterday}</td>
                 )}
                 {habitIndex === 0 && (
                   <td rowSpan={2} style={{
@@ -76,4 +77,4 @@ const TrialTrack = () => {
   );
 };
 
-export default TrialTrack;
+export default YesterdayTrack;
