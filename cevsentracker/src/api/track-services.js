@@ -11,6 +11,15 @@ export const trackHabit = async (habitId, completed) => {
     });
     return response.data;
 };
+
+export const trackYesterdaysHabit = async (habitId, completed) => {
+    const response = await axios.post(`${API_URL + track}/yesterday?habitId=${habitId}&completed=${completed}`, 
+    null, {
+        headers: authHeader()
+    });
+    return response.data;
+};
+
 export const deleteHabit = async (habitId) => {
     const response = await axios.delete(`${API_URL + track}?habitId=${habitId}`, {
         headers: authHeader()

@@ -48,7 +48,6 @@ export const addHabitToUser = async (habitId) => {
   };
 
   export const addHabitToUserByHabitName = async (habitName) => {
-    console.log(authHeader());
     const response = await axios.patch(`${API_URL + userPath + get}?habitName=${habitName}`, null, {
       headers: authHeader()
     });

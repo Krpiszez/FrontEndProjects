@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Card, CardContent, Typography, Switch } from '@mui/material';
-import { getHabitById, trackHabit, getUser, getYesterdaysRecord, deleteYesterdaysHabit } from '../../../api';
+import { getHabitById, getUser, getYesterdaysRecord, deleteYesterdaysHabit, trackYesterdaysHabit } from '../../../api';
 import { getYesterdayDate, swalToast } from '../../../utils';
 import './style.scss'
+import { useSelector } from 'react-redux';
 
 const YesterdayUserHabits = () => {
   const [loading, setLoading] = useState(true);
   const [habits, setHabits] = useState([]);
   const [completion, setCompletion] = useState([]);
   const yesterdaysDate = getYesterdayDate();
-
+  const { user } = useSelector(state => state.auth);
 const loadData = async () => {
     try {
       const data = await getUser();
@@ -43,11 +44,11 @@ const loadData = async () => {
   const handleSwitchChange = async (habitId, completed) => {
     try {
       const response = await getYesterdaysRecord();
-      const arr = response.filter((r) => r.date===yesterdaysDate && r.habit.id===habitId);
+      const arr = response.filter((r) => r.date===yesterdaysDate && r.habit.id===habitId && r.user.userName === user.userName);
       let habitIds = [];
       arr.forEach(r=> habitIds.push(r.habit.id))
       if(!habitIds.includes(habitId)){
-      await trackHabit(habitId, completed);
+      await trackYesterdaysHabit(habitId, completed);
       }else {
         await deleteYesterdaysHabit(habitId);
       }
@@ -65,10 +66,8 @@ const loadData = async () => {
       console.error('Error fetching habit completion records:', error);
     }
   };
-
-  console.log(completion)
   const isChecked = (habitId) => {
-  const matchingEntries = completion.filter((r) => r.habit.id === habitId);
+  const matchingEntries = completion.filter((r) => r.habit.id === habitId && r.user.userName === user.userName);
   return matchingEntries.length > 0;
   }
   return (
