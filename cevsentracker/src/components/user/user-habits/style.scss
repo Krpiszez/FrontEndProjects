@@ -1,6 +1,14 @@
 @use "../../../assets/styles/scss/variables" as v;
 @use "../../../assets/styles/scss/mixins" as m;
 
+.date-header{
+  text-align: center;
+  background-color: v.$color2;
+  color: v.$color3;
+  border-radius: 1rem;
+  box-shadow: 1rem;
+}
+
 .user-habits-container {
     @include m.reset-list;
     padding: 20px;

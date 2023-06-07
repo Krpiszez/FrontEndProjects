@@ -44,6 +44,7 @@ const loadData = async () => {
   const handleSwitchChange = async (habitId, completed) => {
     try {
       const response = await getYesterdaysRecord();
+      console.log(response)
       const arr = response.filter((r) => r.date===yesterdaysDate && r.habit.id===habitId && r.user.userName === user.userName);
       let habitIds = [];
       arr.forEach(r=> habitIds.push(r.habit.id))
@@ -72,6 +73,7 @@ const loadData = async () => {
   }
   return (
     <Container>
+      <h1 className='date-header'>{yesterdaysDate}</h1>
       {loading ? (
         <p>Loading...</p>
       ) : (

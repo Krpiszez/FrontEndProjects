@@ -1,21 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
-import { getAllRecords } from '../../../api';
+import { getYesterdaysRecord } from '../../../api';
+import { getCurrentDate, getYesterdayDate } from '../../../utils';
 
 const TrialTrack = () => {
-  const [trackedHabits, setTrackedHabits] = useState([]);
+  const [todaysHabits, setTodaysHabits] = useState([]);
+  const [yesterdaysHabits, setYesterdaysHabits] = useState([]);
 
   const users = ["Mehmet", "Enes", "Ahmet", "Mehmet", "Faruk", "Omer"];
   const toTrack = ["Cevsen Okuma", "Kuran Okuma"]
 
+  const today = getCurrentDate();
+  const yesterday = getYesterdayDate();
+
   useEffect(() => {
-    fetchTrackedHabits();
+    fetchTrackedHabits();// eslint-disable-next-line
   }, []);
 
   const fetchTrackedHabits = async () => {
     try {
-      const habits = await getAllRecords(); // Fetch all tracked habits from the API
-      setTrackedHabits(habits);
+      const habits = await getYesterdaysRecord(); // Fetch all tracked habits from the API
+      const todaysRecords = habits.filter(r => r.date === today);
+      const yesterdaysRecords = habits.filter(r => r.date === yesterday);
+      console.log(todaysRecords)
+      console.log(yesterdaysRecords)
+      setTodaysHabits(todaysRecords);
+      setYesterdaysHabits(yesterdaysRecords);
     } catch (error) {
       console.error('Error fetching tracked habits:', error);
       // Handle error
@@ -23,7 +33,7 @@ const TrialTrack = () => {
   };
 
   // Group habits by date
-  const groupedHabits = trackedHabits.reduce((grouped, habit) => {
+  const todaysGroupedHabits = todaysHabits.reduce((grouped, habit) => {
     const date = habit.date;
     if (!grouped[date]) {
       grouped[date] = [];
@@ -31,6 +41,17 @@ const TrialTrack = () => {
     grouped[date].push(habit);
     return grouped;
   }, {});
+  console.log(todaysGroupedHabits)
+
+  const yesterdaysGroupedHabits = yesterdaysHabits.reduce((grouped, habit) => {
+    const date = habit.date;
+    if (!grouped[date]) {
+      grouped[date] = [];
+    }
+    grouped[date].push(habit);
+    return grouped;
+  }, {});
+  console.log(yesterdaysGroupedHabits)
 
   return (
     <Table striped bordered>

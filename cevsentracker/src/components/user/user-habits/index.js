@@ -70,6 +70,7 @@ const loadData = async () => {
   }
   return (
     <Container>
+      <h1 className='date-header'>{currentDate}</h1>
       {loading ? (
         <p>Loading...</p>
       ) : (
