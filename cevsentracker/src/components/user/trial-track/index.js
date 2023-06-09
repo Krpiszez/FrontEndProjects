@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Table } from 'react-bootstrap';
 import { getYesterdaysRecord } from '../../../api';
-import { getCurrentDate } from '../../../utils';
+import { getCurrentDate, swalToast } from '../../../utils';
 
 const TrialTrack = () => {
   const [todaysHabits, setTodaysHabits] = useState([]);
@@ -31,7 +31,7 @@ const TrialTrack = () => {
       setTodaysHabits(todaysHabitsData);
   
     } catch (error) {
-      console.error('Error fetching tracked habits:', error);
+      swalToast(error.response.data.message, 'error');
       // Handle error
     }
   };
