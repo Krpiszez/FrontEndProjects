@@ -3,6 +3,7 @@ import { getAllHabits } from "../../../../api";
 import { SectionHeader, Spacer, HabitCard } from "../../..";
 import { Col, Container, Row } from 'react-bootstrap';
 import "./style.scss";
+import { swalToast } from '../../../utils';
 
 const PopularHabits = () => {
     const [loading, setLoading] = useState(true);
@@ -15,7 +16,7 @@ const PopularHabits = () => {
             const habitData = await getAllHabits();
             setHabits(habitData);
         } catch (error) {
-            console.log(error)
+            swalToast(error.response.data.message, 'error');
         } finally {
             setLoading(false);
         }
