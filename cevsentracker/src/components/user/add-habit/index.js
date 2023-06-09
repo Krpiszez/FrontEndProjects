@@ -63,7 +63,7 @@ const AddHabit = () => {
                     disabled={!(formik.isValid && formik.dirty) || loading}
                     className='mt-3 text-uppercase w-100'
                 >
-                    {loading && <Spinner animation='border' size='sm' />} Create Habit
+                    {loading && <Spinner animation='border' size='sm' />} Create an Habit
                 </Button>
             </fieldset>
         </Form>
